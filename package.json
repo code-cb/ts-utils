@@ -1,0 +1,32 @@
+{
+  "name": "@codecb/ts-utils",
+  "version": "0.0.1",
+  "license": "MIT",
+  "type": "module",
+  "author": {
+    "email": "icodemyownlife@gmail.com",
+    "name": "ICodeMyOwnLife"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/code-cb/ts-utils.git"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist && tsc",
+    "format": "prettier --write 'src/**/*.ts'",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@codecb/prettierrc": "0.0.1",
+    "@codecb/tsconfigs": "0.0.8",
+    "@types/node": "18.6.2",
+    "prettier": "2.7.1",
+    "typescript": "4.7.4"
+  },
+  "prettier": "@codecb/prettierrc"
+}
