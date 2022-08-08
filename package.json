@@ -1,6 +1,6 @@
 {
   "name": "@codecb/ts-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "MIT",
   "type": "module",
   "author": {
@@ -14,18 +14,24 @@
   "files": [
     "dist"
   ],
-  "exports": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "exports": {
+    "require": "./dist/cjs/index.cjs",
+    "import": "./dist/esm/index.mjs"
+  },
+  "types": "./dist/esm/index.d.mts",
   "scripts": {
-    "build": "rm -rf dist && tsc",
+    "build": "rm -rf dist && rollup -c rollup.config.ts --configPlugin rollup-plugin-ts",
     "format": "prettier --write 'src/**/*.ts'",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@codecb/prettierrc": "0.0.1",
     "@codecb/tsconfigs": "0.0.8",
-    "@types/node": "18.6.2",
+    "@types/node": "18.6.4",
     "prettier": "2.7.1",
+    "rollup": "2.77.2",
+    "rollup-plugin-terser": "7.0.2",
+    "rollup-plugin-ts": "3.0.2",
     "typescript": "4.7.4"
   },
   "prettier": "@codecb/prettierrc"

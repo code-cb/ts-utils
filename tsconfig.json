@@ -1,5 +1,4 @@
 {
   "extends": "@codecb/tsconfigs/tsconfig.node-lib",
-  "compilerOptions": { "outDir": "dist" },
-  "include": ["src"]
+  "include": ["src", "test"]
 }
