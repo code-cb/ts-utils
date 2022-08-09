@@ -1,6 +1,6 @@
 {
   "name": "@codecb/ts-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "type": "module",
   "author": {
@@ -22,12 +22,13 @@
   "scripts": {
     "build": "rm -rf dist && rollup -c rollup.config.ts --configPlugin rollup-plugin-ts",
     "format": "prettier --write 'src/**/*.ts'",
+    "prepublishOnly": "yarn build",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@codecb/prettierrc": "0.0.1",
     "@codecb/tsconfigs": "0.0.8",
-    "@types/node": "18.6.4",
+    "@types/node": "18.6.5",
     "prettier": "2.7.1",
     "rollup": "2.77.2",
     "rollup-plugin-terser": "7.0.2",

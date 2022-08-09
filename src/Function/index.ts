@@ -1,3 +1,2 @@
-export { type AnyFunc } from './AnyFunc.js';
-export { type Func } from './Func.js';
+export { type AnyFunc, type Func, type VoidFunc } from './Func.js';
 export { type NoInfer } from './NoInfer.js';

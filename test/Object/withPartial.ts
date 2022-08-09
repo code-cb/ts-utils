@@ -9,10 +9,10 @@ interface Obj {
 
 assert<
   Equals<
-    O.Fill<Obj, { a: number; b: string }>,
+    O.WithPartial<Obj, { a: number; b: string }>,
     { a?: number; b?: string; c: boolean; d?: Function }
   >
 >();
 
-const o = O.fill<Obj>()({ b: 'b' })({ a: 1, c: true });
+const o = O.withPartial<Obj>()({ b: 'b' })({ a: 1, c: true });
 assert<Equals<typeof o, Obj>>();

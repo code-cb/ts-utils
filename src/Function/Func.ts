@@ -6,3 +6,7 @@
 export type Func<Args extends unknown[] = [], Return = void> = (
   ...args: Args
 ) => Return;
+
+export type AnyFunc = Func<any[], any>;
+
+export type VoidFunc = Func<[], void>;
