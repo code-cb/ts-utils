@@ -1,11 +1,11 @@
+import * as B from '../../src/boolean/index.js';
 import {
   assert,
   Assignable,
-  B,
   Equals,
   Type,
   UnwrapType,
-} from '../../src/index.js';
+} from '../../src/common/index.js';
 
 type Email = Type<string, 'email'>;
 assert<B.Not<Equals<Email, string>>>();

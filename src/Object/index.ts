@@ -1,6 +1,7 @@
 export { type Dict } from './Dict.js';
 export { dictOf } from './dictOf.js';
 export { type Entries, entries, type Unionize } from './entries.js';
+export { type Exclusive } from './Exclusive.js';
 export {
   type FromEntries,
   fromEntries,

@@ -1,4 +1,5 @@
-import { assert, Equals, O } from '../../src/index.js';
+import * as O from '../../src/object/index.js';
+import { assert, Equals } from '../../src/common/index.js';
 
 type E = 'a' | 'b' | 'c';
 

@@ -1,4 +1,4 @@
-import { assert, is, Equals } from '../../src/index.js';
+import { assert, Equals, is } from '../../src/common/index.js';
 
 interface Foo {
   foo: string;

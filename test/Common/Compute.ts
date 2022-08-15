@@ -1,4 +1,4 @@
-import { assert, Compute, IsEqual } from '../../src/index.js';
+import { assert, Compute, IsEqual } from '../../src/common/index.js';
 
 assert<IsEqual<Compute<{ a: 1; b: 2 }>, { a: 1; b: 2 }>>();
 assert<IsEqual<Compute<{ a: 1 } & { b: 2 }>, { a: 1; b: 2 }>>();

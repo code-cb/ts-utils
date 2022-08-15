@@ -1,4 +1,4 @@
-import { assert, Equals, id, Id, Assignable } from '../../src/index.js';
+import { assert, Assignable, Equals, id, Id } from '../../src/common/index.js';
 
 const u1 = {
   name: 'Mary',

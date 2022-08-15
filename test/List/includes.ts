@@ -1,4 +1,5 @@
-import { assert, Equals, L } from '../../src/index.js';
+import * as L from '../../src/list/index.js';
+import { assert, Equals } from '../../src/common/index.js';
 
 const enums = ['a', 'b', 'c'] as const;
 

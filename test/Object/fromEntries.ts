@@ -1,4 +1,5 @@
-import { assert, Equals, id, O } from '../../src/index.js';
+import * as O from '../../src/object/index.js';
+import { assert, Equals, id } from '../../src/common/index.js';
 
 type Entries = ['a', number] | ['b', () => Promise<number>] | ['c', string];
 assert<

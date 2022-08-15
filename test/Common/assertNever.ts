@@ -1,4 +1,4 @@
-import { assert, assertNever, Equals } from '../../src/index.js';
+import { assert, assertNever, Equals } from '../../src/common/index.js';
 
 type E1 = 'a' | 'b' | 'c';
 const f1 = (e: E1) => {

@@ -1,4 +1,5 @@
-import { assert, C, Equals } from '../../src/index.js';
+import * as C from '../../src/class/index.js';
+import { assert, Equals } from '../../src/common/index.js';
 
 declare abstract class MyErrorBase {
   constructor(message: string);

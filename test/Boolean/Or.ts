@@ -1,4 +1,5 @@
-import { assert, B, Equals } from '../../src/index.js';
+import * as B from '../../src/boolean/index.js';
+import { assert, Equals } from '../../src/common/index.js';
 
 assert<Equals<B.Or<true, true>, true>>();
 assert<Equals<B.Or<true, false>, true>>();

@@ -1,4 +1,4 @@
-import { O } from '../../src/index.js';
+import * as O from '../../src/object/index.js';
 
 export const jv1: O.JsonValue = {
   a: 1,

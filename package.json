@@ -1,6 +1,6 @@
 {
   "name": "@codecb/ts-utils",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "license": "MIT",
   "type": "module",
   "author": {
@@ -15,10 +15,74 @@
     "dist"
   ],
   "exports": {
-    "require": "./dist/cjs/index.cjs",
-    "import": "./dist/esm/index.mjs"
+    "./boolean": {
+      "import": "./dist/esm/boolean/index.mjs",
+      "require": "./dist/cjs/boolean/index.cjs"
+    },
+    "./class": {
+      "import": "./dist/esm/class/index.mjs",
+      "require": "./dist/cjs/class/index.cjs"
+    },
+    "./common": {
+      "import": "./dist/esm/common/index.mjs",
+      "require": "./dist/cjs/common/index.cjs"
+    },
+    "./function": {
+      "import": "./dist/esm/function/index.mjs",
+      "require": "./dist/cjs/function/index.cjs"
+    },
+    "./list": {
+      "import": "./dist/esm/list/index.mjs",
+      "require": "./dist/cjs/list/index.cjs"
+    },
+    "./number": {
+      "import": "./dist/esm/number/index.mjs",
+      "require": "./dist/cjs/number/index.cjs"
+    },
+    "./object": {
+      "import": "./dist/esm/object/index.mjs",
+      "require": "./dist/cjs/object/index.cjs"
+    },
+    "./string": {
+      "import": "./dist/esm/string/index.mjs",
+      "require": "./dist/cjs/string/index.cjs"
+    },
+    "./union": {
+      "import": "./dist/esm/union/index.mjs",
+      "require": "./dist/cjs/union/index.cjs"
+    }
   },
-  "types": "./dist/esm/index.d.mts",
+  "typesVersions": {
+    "*": {
+      "boolean": [
+        "dist/esm/boolean/index.d.ts"
+      ],
+      "class": [
+        "dist/esm/class/index.d.ts"
+      ],
+      "common": [
+        "dist/esm/common/index.d.ts"
+      ],
+      "function": [
+        "dist/esm/function/index.d.ts"
+      ],
+      "list": [
+        "dist/esm/list/index.d.ts"
+      ],
+      "number": [
+        "dist/esm/number/index.d.ts"
+      ],
+      "object": [
+        "dist/esm/object/index.d.ts"
+      ],
+      "string": [
+        "dist/esm/string/index.d.ts"
+      ],
+      "union": [
+        "dist/esm/union/index.d.ts"
+      ]
+    }
+  },
   "scripts": {
     "build": "rm -rf dist && rollup -c rollup.config.ts --configPlugin rollup-plugin-ts",
     "format": "prettier --write 'src/**/*.ts'",
@@ -27,10 +91,11 @@
   },
   "devDependencies": {
     "@codecb/prettierrc": "0.0.1",
-    "@codecb/tsconfigs": "0.0.8",
-    "@types/node": "18.6.5",
+    "@codecb/tsconfigs": "0.0.9",
+    "@types/node": "18.7.3",
+    "fast-glob": "3.2.11",
     "prettier": "2.7.1",
-    "rollup": "2.77.2",
+    "rollup": "2.78.0",
     "rollup-plugin-terser": "7.0.2",
     "rollup-plugin-ts": "3.0.2",
     "typescript": "4.7.4"

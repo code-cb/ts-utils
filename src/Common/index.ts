@@ -7,6 +7,7 @@ export { type Compute } from './Compute.js';
 export { type Equals, type IsEqual } from './Equals.js';
 export { exclude } from './exclude.js';
 export { type ExcludeStrict } from './ExcludeStrict.js';
+export { expectAssignable } from './expectAssignable.js';
 export { type ExtractStrict } from './ExtractStrict.js';
 export { type Id, id } from './id.js';
 export { type If } from './If.js';

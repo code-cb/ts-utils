@@ -1,4 +1,6 @@
-import { assert, B, S } from '../../src/index.js';
+import * as B from '../../src/boolean/index.js';
+import * as S from '../../src/string/index.js';
+import { assert } from '../../src/common/index.js';
 
 enum MyEnum {
   A = 'A',

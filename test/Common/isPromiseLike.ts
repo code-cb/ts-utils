@@ -1,4 +1,4 @@
-import { assert, isPromiseLike } from '../../src/index.js';
+import { assert, isPromiseLike } from '../../src/common/index.js';
 
 const p1 = Promise.resolve(1);
 assert(isPromiseLike(p1));

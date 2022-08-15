@@ -1,4 +1,4 @@
-import { symToStr, assert, Equals } from '../../src/index.js';
+import { assert, Equals, symToStr } from '../../src/common/index.js';
 
 const doSth = () => {};
 const fn = symToStr({ doSth });

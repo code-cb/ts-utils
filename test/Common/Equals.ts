@@ -1,4 +1,5 @@
-import { assert, Assignable, B, Equals, IsEqual } from '../../src/index.js';
+import * as B from '../../src/boolean/index.js';
+import { assert, Assignable, Equals, IsEqual } from '../../src/common/index.js';
 
 declare const fromKeys: <Key extends PropertyKey>(
   keys: readonly Key[],

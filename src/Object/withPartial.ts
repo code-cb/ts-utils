@@ -1,4 +1,4 @@
-import { Compute } from '../Common/Compute.js';
+import { Compute } from '../common/Compute.js';
 
 export type WithPartial<
   Obj extends object,

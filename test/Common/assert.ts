@@ -1,4 +1,5 @@
-import { assert, Assignable, B as E2 } from '../../src/index.js';
+import * as B from '../../src/boolean/index.js';
+import { assert, Assignable } from '../../src/common/index.js';
 
 export const f1 = (s: string | Buffer) => {
   assert(typeof s === 'string');
@@ -13,4 +14,4 @@ export const f2 = (s: string | Buffer) => {
 type E1 = 'a' | 'b';
 type E2 = 'a' | 'b' | 'c';
 assert<Assignable<E1, E2>>();
-assert<E2.Not<Assignable<E2, E1>>>();
+assert<B.Not<Assignable<E2, E1>>>();

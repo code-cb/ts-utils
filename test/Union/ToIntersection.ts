@@ -1,4 +1,5 @@
-import { assert, Equals, U } from '../../src/index.js';
+import * as U from '../../src/union/index.js';
+import { assert, Equals } from '../../src/common/index.js';
 
 assert<
   Equals<

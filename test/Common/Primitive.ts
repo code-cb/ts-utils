@@ -1,4 +1,4 @@
-import { assert, Equals, Primitive } from '../../src/index.js';
+import { assert, Equals, Primitive } from '../../src/common/index.js';
 
 assert<
   Equals<

@@ -1,4 +1,5 @@
-import { assert, Assignable, O } from '../../src/index.js';
+import * as O from '../../src/object/index.js';
+import { assert, Equals } from '../../src/common/index.js';
 
 interface Obj1 {
   a: number;
@@ -16,11 +17,10 @@ type Overwritten = O.Overwrite<Obj1, Obj2>;
 
 interface Expected {
   a: number;
-  b?: string | undefined;
+  b?: string;
   c: number;
-  d?: string | undefined;
+  d?: string;
   e: boolean;
 }
 
-assert<Assignable<Overwritten, Expected>>();
-assert<Assignable<Expected, Overwritten>>();
+assert<Equals<Overwritten, Expected>>();

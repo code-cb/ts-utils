@@ -1,4 +1,4 @@
-import { exclude, assert, Equals } from '../../src/index.js';
+import { assert, Equals, exclude } from "../../src/common/index.js";
 
 const arr1 = ['a', 'b', 'c', 'd'] as const;
 const arr2 = arr1.filter(exclude('a', 'b'));
