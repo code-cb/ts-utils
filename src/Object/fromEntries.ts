@@ -2,6 +2,7 @@
  * References:
  * - https://effectivetypescript.com/2020/05/12/unionize-objectify/
  * - https://github.com/garronej/tsafe/blob/debb125bef32a6312c0381969968c529dae25e17/src/objectFromEntries.ts
+ * - https://github.com/sindresorhus/ts-extras/blob/2874930a648d7d7cdd6c742da2ec091670144f04/source/object-from-entries.ts
  */
 
 export type Objectify<Union extends readonly [PropertyKey, unknown]> = {
@@ -11,9 +12,9 @@ export type Objectify<Union extends readonly [PropertyKey, unknown]> = {
 /**
  * This is just an alias for Objectify<Union>
  */
-export type FromEntries<Entries extends readonly [PropertyKey, unknown]> =
-  Objectify<Entries>;
+export type FromEntries<Entry extends readonly [PropertyKey, unknown]> =
+  Objectify<Entry>;
 
-export const fromEntries = <Entries extends readonly [PropertyKey, unknown]>(
-  entries: ReadonlyArray<Entries>,
-) => Object.fromEntries(entries) as FromEntries<Entries>;
+export const fromEntries = <Entry extends readonly [PropertyKey, unknown]>(
+  entries: ReadonlyArray<Entry>,
+) => Object.fromEntries(entries) as FromEntries<Entry>;

@@ -6,6 +6,6 @@
  * - https://github.com/garronej/tsafe/blob/9fd80c7b449d4402d7b4e1e8cfcd9601f8c0992b/src/tools/Unite.ts
  */
 
-export type Compute<T> = T extends Function
-  ? T
-  : { [Key in keyof T]: T[Key] } & {};
+export type Compute<Value> = Value extends Function
+  ? Value
+  : { [Key in keyof Value]: Value[Key] } & {};

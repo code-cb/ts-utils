@@ -6,7 +6,7 @@ export const jv1: O.JsonValue = {
   c: true,
 };
 
-// @ts-expect-error: Type '() => void' is not assignable to type 'JsonValue | undefined'
+// @ts-expect-error
 export const jv2: O.JsonValue = {
   a: () => {},
 };

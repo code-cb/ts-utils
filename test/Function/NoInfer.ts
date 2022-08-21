@@ -1,25 +1,25 @@
 import * as F from '../../src/function/index.js';
 
 export namespace Main {
-  type NoInfer<T> = F.NoInfer<T>;
+  type NoInfer<Value> = F.NoInfer<Value>;
 
   declare const f1: <T>(a: T, b: NoInfer<T>) => T;
   f1('a', 'a');
   f1(undefined, undefined);
-  // @ts-expect-error: Argument of type '"b"' is not assignable to parameter of type '"a"'
+  // @ts-expect-error
   f1('a', 'b');
 
   declare const f2: <T>(a: NoInfer<T>, b: T) => T;
   f2('b', 'b');
   f2(undefined, undefined);
-  // @ts-expect-error: Argument of type '"a"' is not assignable to parameter of type '"b"'
+  // @ts-expect-error
   f2('a', 'b');
 
   declare const f3: <T = never>(a: NoInfer<T>, b: NoInfer<T>) => T;
-  // @ts-expect-error: Argument of type 'undefined' is not assignable to parameter of type 'never'
+  // @ts-expect-error
   f3(undefined, undefined);
   f3<string>('a', 'b');
-  // @ts-expect-error: Argument of type 'string' is not assignable to parameter of type 'never'
+  // @ts-expect-error
   f3('a', 'b');
 }
 
@@ -27,18 +27,18 @@ export namespace Main {
  * Alternative implementations of `NoInfer`
  */
 export namespace A1 {
-  type NoInfer<T> = T & { [K in keyof T]: T[K] };
+  type NoInfer<Value> = Value & { [K in keyof Value]: Value[K] };
 
   declare const f1: <T>(a: T, b: NoInfer<T>) => T;
   f1('a', 'a');
   f1(undefined, undefined);
-  // @ts-expect-error: Argument of type '"b"' is not assignable to parameter of type '"a"'
+  // @ts-expect-error
   f1('a', 'b');
 
   declare const f2: <T>(a: NoInfer<T>, b: T) => T;
   f2('b', 'b');
   f2(undefined, undefined);
-  // @ts-expect-error: Argument of type '"a"' is not assignable to parameter of type '"b"'
+  // @ts-expect-error
   f2('a', 'b');
 
   declare const f3: <T = never>(a: NoInfer<T>, b: NoInfer<T>) => T;

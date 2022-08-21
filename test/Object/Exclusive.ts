@@ -20,5 +20,5 @@ declare const processSelect: (select: Select) => void;
 
 processSelect({ value: 'a' });
 processSelect({ multiple: true, values: ['a', 'b'] });
-// @ts-expect-error: Type 'string' is not assignable to type 'never'
+// @ts-expect-error
 processSelect({ multiple: true, values: ['a', 'b'], value: 'a' });

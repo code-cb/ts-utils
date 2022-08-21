@@ -40,6 +40,7 @@ export namespace Main {
   assert<Equals<Partial<{ a: 1; b: 2; c: 3 }>, { a?: 1; b?: 2; c?: 3 }>>();
   assert<B.Not<Equals<any, object>>>(); // Cool!
   assert<B.Not<Equals<object, unknown>>>();
+  assert<Equals<never, never>>(); // Ah ha!
 }
 
 /**
@@ -59,4 +60,5 @@ export namespace A1 {
   assert<Equals<Partial<{ a: 1; b: 2; c: 3 }>, { a?: 1; b?: 2; c?: 3 }>>();
   assert<Equals<any, object>>(); // Oops!
   assert<B.Not<Equals<unknown, object>>>();
+  assert<B.Not<Equals<never, never>>>(); // Wow!
 }

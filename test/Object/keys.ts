@@ -1,5 +1,17 @@
 import * as O from '../../src/object/index.js';
 import { assert, Equals } from '../../src/common/index.js';
 
-const keys = O.keys({ a: 1, b: 2, c: 3 });
-assert<Equals<typeof keys, ('a' | 'b' | 'c')[]>>();
+const sa = Symbol('a');
+const sb = Symbol('b');
+const o = {
+  a: 1,
+  b: 2,
+  1: '1',
+  2: '2',
+  [sa]: 'sa',
+  [sb]: 'sb',
+};
+
+assert<Equals<O.Key<typeof o>, 'a' | 'b' | '1' | '2'>>();
+const keys = O.keys(o);
+assert<Equals<typeof keys, ('a' | 'b' | '1' | '2')[]>>();

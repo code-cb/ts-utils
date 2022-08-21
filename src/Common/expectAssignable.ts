@@ -1,1 +1,1 @@
-export const expectAssignable = <T>(_value: T) => {};
+export const expectAssignable = <Value>(_value: Value) => {};

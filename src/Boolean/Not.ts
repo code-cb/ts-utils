@@ -11,4 +11,4 @@ type NotMap = {
   false: true;
 };
 
-export type Not<B extends boolean> = NotMap[_Str<B>];
+export type Not<Value extends boolean> = NotMap[_Str<Value>];

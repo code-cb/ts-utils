@@ -4,12 +4,12 @@ type Union = { type: string; value: 'a' } | { type: string; value: 'b' };
 
 assert<Equals<Extract<Union, { value: 'a' }>, { type: string; value: 'a' }>>();
 assert<
-  // @ts-expect-error: Property 'type' is missing in type '{ value: "a"; }' but required in type '{ type: string; value: "a"; }'
+  // @ts-expect-error
   Equals<ExtractStrict<Union, { value: 'a' }>, { type: string; value: 'a' }>
 >();
 
 assert<Equals<Extract<Union, { type: any; value: 'e' }>, never>>();
-// @ts-expect-error: Types of property 'value' are incompatible
+// @ts-expect-error
 assert<Equals<ExtractStrict<Union, { type: any; value: 'e' }>, never>>();
 
 assert<

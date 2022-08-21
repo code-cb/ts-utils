@@ -13,7 +13,7 @@ assert<
 >();
 assert<
   Equals<
-    // @ts-expect-error: Type '"e"' is not assignable to type 'keyof Obj'
+    // @ts-expect-error
     O.OmitStrict<Obj, 'c' | 'd' | 'e'>,
     { a: number; b: string | undefined }
   >

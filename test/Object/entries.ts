@@ -7,7 +7,7 @@ interface Obj {
 }
 assert<
   Equals<
-    O.Entries<Obj>,
+    O.Entry<Obj>,
     ['a', number] | ['d', (() => Promise<number>) | undefined]
   >
 >();
@@ -17,4 +17,6 @@ const o = {
   b: () => Promise.resolve(2),
 };
 const entries = O.entries(o);
-assert<Equals<typeof entries, ['a', number] | ['b', () => Promise<number>]>>();
+assert<
+  Equals<typeof entries, (['a', number] | ['b', () => Promise<number>])[]>
+>();

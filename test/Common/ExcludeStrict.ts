@@ -4,12 +4,12 @@ type Union = { type: string; value: 'a' } | { type: string; value: 'b' };
 
 assert<Equals<Exclude<Union, { value: 'a' }>, { type: string; value: 'b' }>>();
 assert<
-  // @ts-expect-error: Property 'type' is missing in type '{ value: "a"; }' but required in type '{ type: string; value: "a"; }'
+  // @ts-expect-error
   Equals<ExcludeStrict<Union, { value: 'a' }>, { type: string; value: 'b' }>
 >();
 
 assert<Equals<Exclude<Union, { type: any; value: 'e' }>, Union>>();
-// @ts-expect-error: Types of property 'value' are incompatible
+// @ts-expect-error
 assert<Equals<ExcludeStrict<Union, { type: any; value: 'e' }>, Union>>();
 
 assert<
