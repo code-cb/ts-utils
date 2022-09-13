@@ -1,4 +1,4 @@
-import * as U from '../../src/union/index.js';
+import * as U from '../../src/union';
 
 type Format = 'cjs' | 'ejs';
 declare const ff: (f: U.Expandable<string, Format>) => void;

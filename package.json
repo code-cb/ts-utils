@@ -1,8 +1,7 @@
 {
   "name": "@codecb/ts-utils",
-  "version": "0.2.1",
+  "version": "0.3.1",
   "license": "MIT",
-  "type": "module",
   "author": {
     "email": "icodemyownlife@gmail.com",
     "name": "ICodeMyOwnLife"
@@ -14,92 +13,94 @@
   "files": [
     "dist"
   ],
+  "main": "./dist/cjs/common.cjs",
+  "module": "./dist/esm/common.mjs",
+  "types": "./dist/esm/common.d.ts",
   "exports": {
     "./boolean": {
-      "import": "./dist/esm/boolean/index.mjs",
-      "require": "./dist/cjs/boolean/index.cjs"
+      "import": "./dist/esm/boolean.mjs",
+      "require": "./dist/cjs/boolean.cjs"
     },
     "./class": {
-      "import": "./dist/esm/class/index.mjs",
-      "require": "./dist/cjs/class/index.cjs"
+      "import": "./dist/esm/class.mjs",
+      "require": "./dist/cjs/class.cjs"
     },
     "./common": {
-      "import": "./dist/esm/common/index.mjs",
-      "require": "./dist/cjs/common/index.cjs"
+      "import": "./dist/esm/common.mjs",
+      "require": "./dist/cjs/common.cjs"
     },
     "./function": {
-      "import": "./dist/esm/function/index.mjs",
-      "require": "./dist/cjs/function/index.cjs"
+      "import": "./dist/esm/function.mjs",
+      "require": "./dist/cjs/function.cjs"
     },
     "./list": {
-      "import": "./dist/esm/list/index.mjs",
-      "require": "./dist/cjs/list/index.cjs"
+      "import": "./dist/esm/list.mjs",
+      "require": "./dist/cjs/list.cjs"
     },
     "./number": {
-      "import": "./dist/esm/number/index.mjs",
-      "require": "./dist/cjs/number/index.cjs"
+      "import": "./dist/esm/number.mjs",
+      "require": "./dist/cjs/number.cjs"
     },
     "./object": {
-      "import": "./dist/esm/object/index.mjs",
-      "require": "./dist/cjs/object/index.cjs"
+      "import": "./dist/esm/object.mjs",
+      "require": "./dist/cjs/object.cjs"
     },
     "./string": {
-      "import": "./dist/esm/string/index.mjs",
-      "require": "./dist/cjs/string/index.cjs"
+      "import": "./dist/esm/string.mjs",
+      "require": "./dist/cjs/string.cjs"
     },
     "./union": {
-      "import": "./dist/esm/union/index.mjs",
-      "require": "./dist/cjs/union/index.cjs"
+      "import": "./dist/esm/union.mjs",
+      "require": "./dist/cjs/union.cjs"
     }
   },
   "typesVersions": {
     "*": {
       "boolean": [
-        "dist/esm/boolean/index.d.ts"
+        "dist/esm/boolean.d.ts"
       ],
       "class": [
-        "dist/esm/class/index.d.ts"
+        "dist/esm/class.d.ts"
       ],
       "common": [
-        "dist/esm/common/index.d.ts"
+        "dist/esm/common.d.ts"
       ],
       "function": [
-        "dist/esm/function/index.d.ts"
+        "dist/esm/function.d.ts"
       ],
       "list": [
-        "dist/esm/list/index.d.ts"
+        "dist/esm/list.d.ts"
       ],
       "number": [
-        "dist/esm/number/index.d.ts"
+        "dist/esm/number.d.ts"
       ],
       "object": [
-        "dist/esm/object/index.d.ts"
+        "dist/esm/object.d.ts"
       ],
       "string": [
-        "dist/esm/string/index.d.ts"
+        "dist/esm/string.d.ts"
       ],
       "union": [
-        "dist/esm/union/index.d.ts"
+        "dist/esm/union.d.ts"
       ]
     }
   },
   "scripts": {
     "build": "rm -rf dist && rollup -c rollup.config.ts --configPlugin rollup-plugin-ts",
-    "format": "prettier --write 'src/**/*.ts'",
+    "format": "prettier --write '**/*.ts'",
     "prepublishOnly": "yarn build",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@codecb/prettierrc": "0.0.1",
     "@codecb/tsconfigs": "0.0.9",
-    "@types/node": "18.7.8",
-    "fast-glob": "3.2.11",
+    "@types/node": "18.7.17",
+    "fast-glob": "3.2.12",
     "prettier": "2.7.1",
-    "rollup": "2.78.1",
+    "rollup": "2.79.0",
     "rollup-plugin-terser": "7.0.2",
     "rollup-plugin-ts": "3.0.2",
-    "rollup-plugin-typescript2": "0.33.0",
-    "typescript": "4.7.4"
+    "typescript": "4.8.3"
   },
   "prettier": "@codecb/prettierrc"
 }

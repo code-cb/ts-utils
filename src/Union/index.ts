@@ -1,4 +1,4 @@
-export { type Expandable } from './Expandable.js';
-export { type Last } from './Last.js';
-export { type Pop } from './Pop.js';
-export { type ToIntersection } from './ToIntersection.js';
+export { type Expandable } from './Expandable';
+export { type PickOne } from './PickOne';
+export { type ToIntersection } from './ToIntersection';
+export { type ToTuple } from './ToTuple';

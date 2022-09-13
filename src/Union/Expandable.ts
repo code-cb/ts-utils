@@ -1,1 +1,3 @@
-export type Expandable<Set, Union extends Set> = Union | Omit<Set, ''>;
+export type Expandable<SuperType, Union extends SuperType> =
+  | Union
+  | Omit<SuperType, ''>;

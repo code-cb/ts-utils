@@ -4,7 +4,7 @@
  * - builtin `InstanceType` type
  */
 
-import { AbstractConstructor } from './Constructor.js';
+import { AbstractConstructor } from './Constructor';
 
 /**
  * @deprecated Use the builtin `InstanceType` instead.

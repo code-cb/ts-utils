@@ -2,12 +2,11 @@ import fg from 'fast-glob';
 import { basename, dirname } from 'node:path';
 import { defineConfig, ModuleFormat } from 'rollup';
 import { terser } from 'rollup-plugin-terser';
-import ts from 'rollup-plugin-typescript2';
+import ts from 'rollup-plugin-ts';
 
 const isDev =
   process.env['NODE_ENV'] === 'development' ||
   process.env['ROLLUP_WATCH'] === 'true';
-
 const extensionMap: Record<ModuleFormat, string> = {
   amd: 'js',
   cjs: 'cjs',
@@ -20,32 +19,29 @@ const extensionMap: Record<ModuleFormat, string> = {
   systemjs: 'js',
   umd: 'js',
 };
-
+const formats: ModuleFormat[] = ['cjs', 'esm'];
 const submodules = fg.sync(['src/*/index.{ts,tsx}'], { stats: false });
-const entries = Object.fromEntries(
-  submodules.map(s => [`${basename(dirname(s))}`, s]),
-);
 
-const createConfig = ({ format }: { format: ModuleFormat }) => {
-  const ext = extensionMap[format];
+export default submodules.map(path => {
+  const moduleName = basename(dirname(path));
+
   return defineConfig({
-    input: entries,
-    output: {
-      chunkFileNames: `[name]-[hash].${ext}`,
+    input: path,
+    output: formats.map(format => ({
       dir: `dist/${format}`,
-      entryFileNames: `[name]/index.${ext}`,
+      entryFileNames: `${moduleName}.${extensionMap[format]}`,
       format,
       sourcemap: isDev,
-    },
+    })),
     plugins: [
       ts({
-        // hook: {
-        //   outputPath(path, kind) {
-        //     return kind === 'declaration' || kind === 'declarationMap'
-        //       ? path.replace(/\.d\.[mc]ts$/, '.d.ts')
-        //       : path;
-        //   },
-        // },
+        hook: {
+          outputPath(path, kind) {
+            return kind === 'declaration' || kind === 'declarationMap'
+              ? path.replace(/\.d\.[mc]ts$/, '.d.ts')
+              : path;
+          },
+        },
         tsconfig: 'tsconfig.build.json',
       }),
       !isDev && terser(),
@@ -54,9 +50,4 @@ const createConfig = ({ format }: { format: ModuleFormat }) => {
       !['EMPTY_BUNDLE'].includes(warning.code!) && defaultHandler(warning);
     },
   });
-};
-
-export default [
-  createConfig({ format: 'cjs' }),
-  createConfig({ format: 'esm' }),
-];
+});

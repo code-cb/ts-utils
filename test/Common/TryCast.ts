@@ -1,4 +1,4 @@
-import { assert, Equals, TryCast } from '../../src/common/index.js';
+import { assert, Equals, TryCast } from '../../src/common';
 
 assert<Equals<TryCast<'42', string, unknown>, '42'>>();
 assert<Equals<TryCast<'42', number, unknown>, unknown>>();

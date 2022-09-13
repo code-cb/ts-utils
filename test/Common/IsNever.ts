@@ -1,5 +1,5 @@
-import * as B from '../../src/boolean/index.js';
-import { assert, IsNever } from '../../src/common/index.js';
+import * as B from '../../src/boolean';
+import { assert, IsNever } from '../../src/common';
 
 assert<IsNever<never>>();
 assert<

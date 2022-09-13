@@ -4,7 +4,7 @@
  * - https://github.com/garronej/tsafe/blob/f3ca4e40da4754bd3cae96403f5b4268468de004/src/Not.ts
  */
 
-import { _Str } from './_Str.js';
+import { _Str } from './_Str';
 
 type NotMap = {
   true: false;

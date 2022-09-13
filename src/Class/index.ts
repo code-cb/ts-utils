@@ -1,9 +1,13 @@
-export { type AbstractClass, type Class } from './Class.js';
+export { type AbstractClass, type Class } from './Class';
 export {
   type AbstractConstructor,
+  type AbstractConstructor as AbstractCtor,
   type AnyAbstractConstructor,
+  type AnyAbstractConstructor as AnyAbstractCtor,
   type AnyConstructor,
+  type AnyConstructor as AnyCtor,
   type Constructor,
-} from './Constructor.js';
-export { type Instance } from './Instance.js';
-export { type Parameters } from './Parameters.js';
+  type Constructor as Ctor,
+} from './Constructor';
+export { type Instance } from './Instance';
+export { type Parameters, type Parameters as Params } from './Parameters';

@@ -5,7 +5,7 @@
  * - https://github.com/ts-essentials/ts-essentials/blob/c63e30e6112ed93df0bcf05028cfe1d67617f93d/lib/types.ts#L210
  */
 
- export type OmitStrict<Obj extends object, Key extends keyof Obj> = Pick<
- Obj,
- Exclude<keyof Obj, Key>
+export type OmitStrict<Obj extends object, Key extends keyof Obj> = Pick<
+  Obj,
+  Exclude<keyof Obj, Key>
 >;

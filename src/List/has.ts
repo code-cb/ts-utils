@@ -3,8 +3,8 @@
  * - https://github.com/sindresorhus/ts-extras/blob/04f28183465a5d102ea12cff3ab51a8d641d4fb8/source/set-has.ts
  */
 
-import { hasOwnProperty } from '../object/hasOwnProperty.js';
-import { includes } from './includes.js';
+import { hasOwnProperty } from '../object/hasOwnProperty';
+import { includes } from './includes';
 
 export function has<Item, Value = unknown>(
   set: ReadonlySet<Item>,
@@ -24,5 +24,5 @@ export function has<Item, Value = unknown>(
 ) {
   return hasOwnProperty(list, 'has')
     ? list.has(value as any)
-    : includes(list, value);
+    : includes(list, value, 0);
 }

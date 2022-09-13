@@ -1,5 +1,5 @@
-import { assert, Equals, id } from '../../src/common/index.js';
-import * as L from '../../src/list/index.js';
+import { assert, Equals, id } from '../../src/common';
+import * as L from '../../src/list';
 
 const l1 = [1, 2, 3] as const;
 assert<Equals<L.Element<typeof l1>, 1 | 2 | 3>>();

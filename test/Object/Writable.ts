@@ -1,4 +1,4 @@
-import * as O from '../../src/object/index.js';
+import * as O from '../../src/object';
 
 interface MyInterface {
   readonly a: string;

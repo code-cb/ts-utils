@@ -1,4 +1,4 @@
-import * as F from '../../src/function/index.js';
+import * as F from '../../src/function';
 
 export namespace Main {
   type NoInfer<Value> = F.NoInfer<Value>;

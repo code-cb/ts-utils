@@ -1,3 +1,69 @@
+[ ] Number
+- Float, IsFloat
+
+Mutate methods may be not good to target but we can provide a another immutable version
+[ ] Array methods/properties:
++ at
+- concat
+- copyWithin?
+- entries
+- every?
+- fill
+- filter?
+- find
+- findIndex
+- findLast
+- findLastIndex
+- flat?
+- flatMap?
+- from?
+- includes
+- indexOf
+- join
+- keys?
+- lastIndexOf
+- length
+- of?
+- pop?
++ push? -> append
+- reverse?
++ shift?
+- slice
+- splice?
+- split
+- toString
++ unshift -> prepend
+[ ] String methods/properties:
+- at
+- charAt
+- concat
+- endsWith
+- includes
+- indexOf
+- lastIndexOf
+- length
+- padEnd
+- padStart
+- repeat
+- slice
+- split
+- startsWith
+- substr
+- substring
+- toLowerCase
+- toUpperCase
+- trim
+- trimEnd
+- trimStart
+
+[ ] Reimplement Range using extends OrderedDigits
+
+[ ] Head
+    - https://github.com/ts-essentials/ts-essentials/blob/c63e30e6112ed93df0bcf05028cfe1d67617f93d/lib/types.ts#L478
+
+[ ] Tail
+    - https://github.com/ts-essentials/ts-essentials/blob/c63e30e6112ed93df0bcf05028cfe1d67617f93d/lib/types.ts#L479
+
 [ ] DeepModify
     - https://github.com/ts-essentials/ts-essentials/blob/c63e30e6112ed93df0bcf05028cfe1d67617f93d/lib/types.ts#L364
 
@@ -34,10 +100,5 @@
 [ ] WritableKey
     - https://github.com/ts-essentials/ts-essentials/blob/c63e30e6112ed93df0bcf05028cfe1d67617f93d/lib/types.ts#L467
 
-[ ] Head
-    - https://github.com/ts-essentials/ts-essentials/blob/c63e30e6112ed93df0bcf05028cfe1d67617f93d/lib/types.ts#L478
-
-[ ] Tail
-    - https://github.com/ts-essentials/ts-essentials/blob/c63e30e6112ed93df0bcf05028cfe1d67617f93d/lib/types.ts#L479
 
 [ ] - https://github.com/sindresorhus/is

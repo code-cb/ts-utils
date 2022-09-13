@@ -1,6 +1,6 @@
-import * as B from '../../src/boolean/index.js';
-import * as L from '../../src/list/index.js';
-import { assert, Equals } from '../../src/common/index.js';
+import * as B from '../../src/boolean';
+import { assert, Equals } from '../../src/common';
+import * as L from '../../src/list';
 
 const t1 = ['a', 1, false] as const;
 assert<Equals<typeof t1, readonly ['a', 1, false]>>();

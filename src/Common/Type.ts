@@ -11,7 +11,11 @@ interface Tagged<Tag> {
   [tag]: Tag;
 }
 
-export type Type<Base, Tag extends PropertyKey> = Tagged<Tag> & Base;
+export type Type<Base, Tag> = Tagged<Tag> & Base;
 
 export type UnwrapType<OpaqueType extends Tagged<any>> =
   OpaqueType extends Type<infer Base, OpaqueType[typeof tag]> ? Base : never;
+
+export const ofType = <OpaqueType extends Tagged<any>>(
+  value: UnwrapType<OpaqueType>,
+) => value as OpaqueType;

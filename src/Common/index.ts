@@ -1,25 +1,36 @@
-export { AssertionError, assert } from './assert.js';
-export { assertNever } from './assertNever.js';
-export { type Assignable } from './Assignable.js';
-export { type Awaitable } from './Awaitable.js';
-export { type Cast } from './Cast.js';
-export { type Compute } from './Compute.js';
-export { type Equals, type IsEqual } from './Equals.js';
-export { exclude } from './exclude.js';
-export { type ExcludeStrict } from './ExcludeStrict.js';
-export { expectAssignable } from './expectAssignable.js';
-export { type ExtractStrict } from './ExtractStrict.js';
-export { type Id, id } from './id.js';
-export { type If } from './If.js';
-export { is } from './is.js';
-export { type IsAny } from './IsAny.js';
-export { type IsNever } from './IsNever.js';
-export { isPromiseLike } from './isPromiseLike.js';
-export { type IsUnknown } from './IsUnknown.js';
-export { type Maybe } from './Maybe.js';
-export { type Nullable } from './Nullable.js';
-export { type Optional } from './Optional.js';
-export { type Primitive } from './Primitive.js';
-export { symToStr } from './symToStr.js';
-export { type TryCast } from './TryCast.js';
-export { type Type, type UnwrapType } from './Type.js';
+export { AssertionError, assert } from './assert';
+export { assertNever } from './assertNever';
+export { type Assignable, type Assignable as Extends } from './Assignable';
+export { type Awaitable } from './Awaitable';
+export { type Cast } from './Cast';
+export {
+  type Compute,
+  type Compute as Resolve,
+  type Compute as Unite,
+} from './Compute';
+export { type Equals, type IsEqual } from './Equals';
+export { exclude } from './exclude';
+export { type ExcludeStrict } from './ExcludeStrict';
+export { expectAssignable } from './expectAssignable';
+export { type ExtractStrict } from './ExtractStrict';
+export { type Id, id, id as subtypeOf, type Id as Subtype } from './id';
+export { type If } from './If';
+export { is } from './is';
+export { type IsAny } from './IsAny';
+export { type IsNever } from './IsNever';
+export { isPromiseLike } from './isPromiseLike';
+export { type IsUnknown } from './IsUnknown';
+export { asMaybe, type Maybe } from './Maybe';
+export { asNullable, type Nullable } from './Nullable';
+export { asOptional, type Optional } from './Optional';
+export { type Primitive } from './Primitive';
+export { symToStr, symToStr as nameOf } from './symToStr';
+export { type TryCast } from './TryCast';
+export {
+  ofType,
+  ofType as opaque,
+  type Type as Opaque,
+  type Type,
+  type UnwrapType as UnwrapOpaque,
+  type UnwrapType,
+} from './Type';

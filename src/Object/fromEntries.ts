@@ -9,12 +9,6 @@ export type Objectify<Union extends readonly [PropertyKey, unknown]> = {
   [K in Union[0]]: Extract<Union, { [0]: K }>[1];
 };
 
-/**
- * This is just an alias for Objectify<Union>
- */
-export type FromEntries<Entry extends readonly [PropertyKey, unknown]> =
-  Objectify<Entry>;
-
 export const fromEntries = <Entry extends readonly [PropertyKey, unknown]>(
   entries: ReadonlyArray<Entry>,
-) => Object.fromEntries(entries) as FromEntries<Entry>;
+) => Object.fromEntries(entries) as Objectify<Entry>;

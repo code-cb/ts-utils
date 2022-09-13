@@ -1,5 +1,5 @@
-import * as L from '../../src/list/index.js';
-import { assert, Equals } from '../../src/common/index.js';
+import { assert, Equals } from '../../src/common';
+import * as L from '../../src/list';
 
 type Item = 'a' | 'b' | 'c';
 declare const v: Item;

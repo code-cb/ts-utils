@@ -1,10 +1,16 @@
-import * as O from '../../src/object/index.js';
-import { assert, Equals } from '../../src/common/index.js';
+import { assert, Equals } from '../../src/common';
+import * as O from '../../src/object';
 
 type E = 'a' | 'b' | 'c';
 
-const d1 = O.dictOf<E>()({});
+export const d1 = O.dictOf<E>()({});
 assert<Equals<typeof d1, {}>>();
 
-const d2 = O.dictOf<E>()({ a: 'a', b: 'b' });
+export const d2 = O.dictOf<E>()({ a: 'a', b: 'b' });
 assert<Equals<typeof d2, { a: 'a'; b: 'b' }>>();
+
+export const d3 = O.dictOf<E, number>()({ 1: 'a', 2: 'b' });
+assert<Equals<typeof d3, { 1: 'a'; 2: 'b' }>>();
+
+// @ts-expect-error
+export const d4 = O.dictOf<E>()({ a: 'a', d: 'd' });

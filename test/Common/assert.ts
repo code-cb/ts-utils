@@ -1,5 +1,5 @@
-import * as B from '../../src/boolean/index.js';
-import { assert, Assignable } from '../../src/common/index.js';
+import * as B from '../../src/boolean';
+import { assert, Assignable } from '../../src/common';
 
 export const f1 = (s: string | Buffer) => {
   assert(typeof s === 'string');

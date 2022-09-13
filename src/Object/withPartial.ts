@@ -1,15 +1,12 @@
-import { Compute } from '../common/Compute.js';
+import { Compute } from '../common';
 
 export type WithPartial<
   Obj extends object,
   PartialObj extends Partial<Obj>,
-> = Omit<Obj, keyof PartialObj> & Partial<PartialObj>;
+> = Compute<Omit<Obj, keyof PartialObj> & Partial<PartialObj>>;
 
 export const withPartial =
   <Obj extends object>() =>
   <PartialObj extends Partial<Obj>>(partialObj: PartialObj) =>
-  (o: Compute<WithPartial<Obj, PartialObj>>) =>
-    ({
-      ...partialObj,
-      ...o,
-    } as unknown as Obj);
+  (o: WithPartial<Obj, PartialObj>) =>
+    ({ ...partialObj, ...o } as unknown as Obj);

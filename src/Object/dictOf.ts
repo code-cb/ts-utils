@@ -1,4 +1,5 @@
-import { id } from '../common/id.js';
-import { Dict } from './Dict.js';
+import { id } from '../common/id';
+import { Dict } from './Dict';
 
-export const dictOf = <Value>() => id<Dict<Value>>();
+export const dictOf = <Value, Key extends PropertyKey = string>() =>
+  id<Dict<Value, Key>>();

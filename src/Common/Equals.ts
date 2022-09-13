@@ -8,7 +8,7 @@
  * - https://github.com/aleclarson/spec.ts/blob/a5f7926fa532fd6b742bccdb0d1c8025fbc1a20b/index.d.ts#L9
  */
 
-import { Compute } from './Compute.js';
+import { Compute } from './Compute';
 
 type StrictEquals<A, B> = (<T>(a: T) => T extends A ? true : false) extends <T>(
   b: T,
