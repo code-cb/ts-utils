@@ -1,4 +1,4 @@
 {
   "extends": "@codecb/tsconfigs/tsconfig.esm-lib",
-  "include": ["src", "test"]
+  "include": ["./sources", "./spec"]
 }
