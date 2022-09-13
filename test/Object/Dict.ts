@@ -1,4 +1,4 @@
-import * as O from '../../src/object/index.js';
+import * as O from '../../src/object';
 
 export const d1: O.Dict<number> = { a: 1, b: 2 };
 
@@ -6,3 +6,11 @@ export const d1: O.Dict<number> = { a: 1, b: 2 };
 export const d2: O.Dict<number> = { a: '1' };
 
 export const d3: O.Dict = { a: '1', b: '2' };
+
+export const d4: O.Dict<boolean, symbol> = {
+  [Symbol('a')]: true,
+  [Symbol('b')]: false,
+  // @ts-expect-error
+  // a: false,
+  2: true,
+};

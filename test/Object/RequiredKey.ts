@@ -1,6 +1,6 @@
-import * as B from '../../src/boolean/index.js';
-import * as O from '../../src/object/index.js';
-import { assert, Equals } from '../../src/common/index.js';
+import * as B from '../../src/boolean';
+import { assert, Equals } from '../../src/common';
+import * as O from '../../src/object';
 
 interface Obj1 {
   p1: string;

@@ -1,5 +1,5 @@
-import * as B from '../../src/boolean/index.js';
-import { assert, Assignable, Equals } from '../../src/common/index.js';
+import * as B from '../../src/boolean';
+import { assert, Assignable, Equals } from '../../src/common';
 
 export namespace Main {
   assert<Assignable<'a', 'a' | 'b'>>();

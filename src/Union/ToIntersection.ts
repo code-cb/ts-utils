@@ -5,8 +5,10 @@
  * - https://github.com/ts-essentials/ts-essentials/blob/c63e30e6112ed93df0bcf05028cfe1d67617f93d/lib/types.ts#L415
  */
 
-export type ToIntersection<Union> = (
-  Union extends unknown ? (union: Union) => void : never
-) extends (intersection: infer Intersection) => void
+export type MonoFn<Union> = Union extends any ? (arg: Union) => any : never;
+
+export type ToIntersection<Union> = MonoFn<Union> extends (
+  arg: infer Intersection,
+) => void
   ? Intersection
   : never;

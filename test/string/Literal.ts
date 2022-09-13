@@ -1,6 +1,6 @@
-import * as B from '../../src/boolean/index.js';
-import * as S from '../../src/string/index.js';
-import { assert, Equals } from '../../src/common/index.js';
+import * as B from '../../src/boolean';
+import { assert, Equals } from '../../src/common';
+import * as S from '../../src/string';
 
 enum MyEnum {
   A = 'A',
@@ -18,9 +18,9 @@ assert<S.IsLiteral<'42'>>();
 assert<Equals<S.Literal<'42'>, '42'>>();
 
 // @ts-expect-error
-assert<B.Not<S.IsLiteral<42>>>();
+type I1 = S.IsLiteral<42>;
 // @ts-expect-error
-assert<Equals<S.Literal<42>, never>>();
+type L2 = S.Literal<42>;
 
 assert<S.IsLiteral<MyEnum>>();
 assert<Equals<S.Literal<MyEnum>, MyEnum>>();
@@ -33,8 +33,3 @@ assert<Equals<S.Literal<keyof MyObject>, 'a' | 'b'>>();
 
 assert<B.Not<S.IsLiteral<string>>>();
 assert<Equals<S.Literal<string>, never>>();
-
-// @ts-expect-error
-assert<B.Not<S.IsLiteral<unknown>>>();
-// @ts-expect-error
-assert<Equals<S.Literal<unknown>, never>>();

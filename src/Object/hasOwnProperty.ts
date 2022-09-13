@@ -4,7 +4,20 @@
  * - https://github.com/sindresorhus/ts-extras/blob/061b8f5a506f125cfd2b172cbb91a15fb702997f/source/object-has-own.ts
  */
 
-import { Maybe } from '../common/Maybe.js';
+import { Maybe } from '../common/Maybe';
+import { MarkRequired } from './MarkRequired';
+
+type ObjectMayHaveProperty<Obj, Prop extends PropertyKey> = Extract<
+  Obj,
+  { [K in Prop]?: any }
+>;
+
+export type ObjectWithProperty<
+  Obj extends Maybe<object>,
+  Prop extends PropertyKey,
+> = ObjectMayHaveProperty<Obj, Prop> extends never
+  ? Obj & Record<Prop, unknown>
+  : MarkRequired<ObjectMayHaveProperty<Obj, Prop>, Prop>;
 
 export const hasOwnProperty = <
   Obj extends Maybe<object>,
@@ -12,4 +25,5 @@ export const hasOwnProperty = <
 >(
   obj: Obj,
   prop: Prop,
-): obj is Obj & Record<Prop, unknown> => !!obj?.hasOwnProperty(prop);
+): // @ts-ignore
+obj is ObjectWithProperty<Obj, Prop> => !!obj?.hasOwnProperty(prop);

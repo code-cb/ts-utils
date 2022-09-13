@@ -1,5 +1,5 @@
-import { assert, Equals } from '../../src/common/index.js';
-import * as O from '../../src/object/index.js';
+import { assert, Equals } from '../../src/common';
+import * as O from '../../src/object';
 
 interface MyInterface {
   a: number;

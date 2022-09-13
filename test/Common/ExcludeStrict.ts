@@ -1,4 +1,4 @@
-import { assert, Equals, ExcludeStrict } from '../../src/common/index.js';
+import { assert, Equals, ExcludeStrict } from '../../src/common';
 
 type Union = { type: string; value: 'a' } | { type: string; value: 'b' };
 

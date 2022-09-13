@@ -1,4 +1,4 @@
-import { assert, Assignable, Equals, id, Id } from '../../src/common/index.js';
+import { assert, Assignable, Equals, id, Id } from '../../src/common';
 
 const u1 = {
   name: 'Mary',
@@ -31,7 +31,19 @@ getArea({ kind: 'circle', radius: 5 });
 getArea({ kind: 'rectangle', width: 10, height: 20 });
 getArea(id<Circle>({ kind: 'circle', radius: 5 }));
 
-assert<Equals<Id<Circle, Circle>, Circle>>();
+type E = 'a' | 'b' | 'c';
+
+export type S1 = Id<E, 'a' | 'b'>;
+assert<Equals<S1, 'a' | 'b'>>();
+
+// @ts-expect-error
+export type S2 = Id<E, 'a' | 'b' | 'd'>;
+
+export type S3 = Id<number, 2 | 3>;
+assert<Equals<S3, 2 | 3>>();
+
+// @ts-expect-error
+export type T1 = Id<number, 'a' | 'b'>;
 
 interface Options {
   a: number;

@@ -1,6 +1,6 @@
-import * as B from '../../src/boolean/index.js';
-import * as N from '../../src/number/index.js';
-import { assert, Equals } from '../../src/common/index.js';
+import * as B from '../../src/boolean';
+import { assert, Equals } from '../../src/common';
+import * as N from '../../src/number';
 
 const enum MyEnum {
   A = 0,
@@ -14,10 +14,13 @@ type MyTuple = [0, 1];
 assert<N.IsLiteral<42>>();
 assert<Equals<N.Literal<42>, 42>>();
 
+assert<N.IsLiteral<20000n>>();
+assert<Equals<N.Literal<20000n>, 20000n>>();
+
 // @ts-expect-error
-assert<B.Not<N.IsLiteral<'42'>>>();
+type I1 = N.IsLiteral<'42'>;
 // @ts-expect-error
-assert<Equals<N.Literal<'42'>, never>>();
+type L2 = N.Literal<'42'>;
 
 assert<B.Not<N.IsLiteral<MyEnum>>>(); // Hmm...
 assert<Equals<N.Literal<MyEnum>, never>>(); // Hmm...
@@ -31,7 +34,5 @@ assert<Equals<N.Literal<MyTuple['length']>, 2>>();
 assert<B.Not<N.IsLiteral<number>>>();
 assert<Equals<N.Literal<number>, never>>();
 
-// @ts-expect-error
-assert<B.Not<N.IsLiteral<unknown>>>();
-// @ts-expect-error
-assert<Equals<N.Literal<unknown>, never>>();
+assert<B.Not<N.IsLiteral<bigint>>>();
+assert<Equals<N.Literal<bigint>, never>>();

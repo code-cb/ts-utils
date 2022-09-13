@@ -5,8 +5,10 @@
 
 export const tuple = <Args extends any[]>(...args: Args) => args;
 
-export type IsTuple<List extends ReadonlyArray<any>> =
-  List extends ReadonlyArray<any> ? (any[] extends List ? false : true) : false;
+export type IsTuple<List extends ReadonlyArray<any>> = any[] extends List
+  ? false
+  : true;
 
-export type Tuple<List extends ReadonlyArray<any>> =
-  List extends ReadonlyArray<any> ? (any[] extends List ? never : List) : never;
+export type Tuple<List extends ReadonlyArray<any>> = any[] extends List
+  ? never
+  : List;

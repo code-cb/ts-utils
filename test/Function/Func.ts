@@ -1,5 +1,5 @@
-import * as F from '../../src/function/index.js';
-import { assert, Equals } from '../../src/common/index.js';
+import { assert, Equals } from '../../src/common';
+import * as F from '../../src/function';
 
 assert<Equals<F.Func, () => void>>();
 assert<Equals<F.Func<[string, boolean?]>, (a: string, b?: boolean) => void>>();

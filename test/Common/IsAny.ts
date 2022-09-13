@@ -1,5 +1,5 @@
-import * as B from '../../src/boolean/index.js';
-import { assert, IsAny } from '../../src/common/index.js';
+import * as B from '../../src/boolean';
+import { assert, IsAny } from '../../src/common';
 
 assert<IsAny<any>>();
 assert<

@@ -1,5 +1,5 @@
-import * as C from '../../src/class/index.js';
-import { assert, Equals } from '../../src/common/index.js';
+import * as C from '../../src/class';
+import { assert, Equals } from '../../src/common';
 
 declare class MyError {
   constructor(msg: string);

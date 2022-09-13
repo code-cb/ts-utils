@@ -1,16 +1,22 @@
 /**
- * References:
- * - https://github.com/sindresorhus/type-fest/blob/8ca2959bc8613e6856681dd14abb1ebcbfef6b25/source/numeric.d.ts#L70
- * - https://github.com/sindresorhus/ts-extras/blob/2874930a648d7d7cdd6c742da2ec091670144f04/source/is-integer.ts
+ * bigint values are alway integers, so we only provide type checks for number values here
  */
 
-export type Integer<Value extends number> = `${Value}` extends `${bigint}`
-  ? Value
+type IntegerImpl<Num extends number> = `${Num}` extends `${bigint}`
+  ? Num
   : never;
 
-export type IsInteger<Value extends number> = `${Value}` extends `${bigint}`
+export type Integer<Num extends number> = number extends Num
+  ? number
+  : IntegerImpl<Num>;
+
+type IsIntegerImpl<Num extends number> = `${Num}` extends `${bigint}`
   ? true
   : false;
+
+export type IsInteger<Num extends number> = number extends Num
+  ? boolean
+  : IsIntegerImpl<Num>;
 
 export const isInteger = Number.isInteger as <T extends number>(
   value: T,

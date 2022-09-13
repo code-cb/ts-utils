@@ -1,1 +1,3 @@
-export type Dict<Value = string> = { [key: string]: Value };
+export type Dict<Value = string, Key extends PropertyKey = string> = {
+  [K in Key]: Value;
+};

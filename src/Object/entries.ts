@@ -5,16 +5,11 @@
  * - https://github.com/sindresorhus/ts-extras/blob/2874930a648d7d7cdd6c742da2ec091670144f04/source/object-entries.ts
  */
 
-import { Value } from './Value.js';
+import { Value } from './Value';
 
 export type Unionize<Obj extends object> = Value<{
   [K in keyof Obj]-?: [K, Obj[K]];
 }>;
 
-/**
- * This is just an alias for Unionize<Obj>
- */
-export type Entry<Obj extends object> = Unionize<Obj>;
-
 export const entries = <Obj extends object>(obj: Obj) =>
-  Object.entries(obj) as unknown as Array<Entry<Obj>>;
+  Object.entries(obj) as unknown as Array<Unionize<Obj>>;

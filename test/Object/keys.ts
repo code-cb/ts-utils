@@ -1,5 +1,5 @@
-import * as O from '../../src/object/index.js';
-import { assert, Equals } from '../../src/common/index.js';
+import { assert, Equals } from '../../src/common';
+import * as O from '../../src/object';
 
 const sa = Symbol('a');
 const sb = Symbol('b');

@@ -1,5 +1,5 @@
-import * as L from '../../src/list/index.js';
-import { assert, Equals } from '../../src/common/index.js';
+import { assert, Equals } from '../../src/common';
+import * as L from '../../src/list';
 
 const set = new Set(['a', 'b', 'c'] as const);
 
