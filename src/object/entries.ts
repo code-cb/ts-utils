@@ -11,5 +11,9 @@ export type Unionize<Obj extends object> = Value<{
   [K in keyof Obj]-?: [K, Obj[K]];
 }>;
 
+export type Entries<Obj extends object> = {} extends Obj
+  ? []
+  : Array<Unionize<Obj>>;
+
 export const entries = <Obj extends object>(obj: Obj) =>
-  Object.entries(obj) as unknown as Array<Unionize<Obj>>;
+  Object.entries(obj) as unknown as Entries<Obj>;

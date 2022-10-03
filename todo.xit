@@ -34,8 +34,8 @@ Mutate methods may be not good to target but we can provide a another immutable 
 - toString
 + unshift -> prepend
 [ ] String methods/properties:
-- at
-- charAt
++ at
+- charAt -> at
 - concat
 - endsWith
 - includes

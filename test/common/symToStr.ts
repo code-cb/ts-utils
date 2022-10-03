@@ -1,6 +1,11 @@
 import { assert, Equals, symToStr } from 'common';
 
-const doSth = () => {};
-const fn = symToStr({ doSth });
-assert<Equals<typeof fn, 'doSth'>>();
-assert(fn === 'doSth');
+describe(`symToStr`, () => {
+  it(`works`, () => {
+    const doSth = () => {};
+    const fn = symToStr({ doSth });
+    assert<Equals<typeof fn, 'doSth'>>();
+    assert(fn === 'doSth');
+    expect(fn).toBe('doSth');
+  });
+});

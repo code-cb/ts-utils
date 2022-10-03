@@ -4,9 +4,9 @@
  * - https://github.com/sindresorhus/type-fest/blob/1483de38aac6fa2e4e23d6c828c3538556bbe64b/source/replace.d.ts
  */
 
-import { JoinImpl } from './Join';
+import { JoinImpl } from './join';
 import { IsLiteral } from './Literal';
-import { SplitImpl, SplitOneImpl } from './Split';
+import { SplitImpl, SplitOneImpl } from './split';
 import { IsLiteralTemplatePart, TemplatePart } from './TemplatePart';
 
 type Fix = '@';
@@ -79,3 +79,18 @@ export type ReplaceAll<
   : SearchValue extends ''
   ? RemoveFixes<JoinImpl<SplitImpl<AddFixes<Str>, SearchValue>, ReplaceValue>>
   : ReplaceAllImpl<Str, SearchValue, ReplaceValue>;
+
+export const replaceAll = <
+  Str extends string,
+  SearchValue extends TemplatePart,
+  ReplaceValue extends TemplatePart,
+>(
+  str: Str,
+  searchValue: SearchValue,
+  replaceValue: ReplaceValue,
+) =>
+  str.replaceAll(searchValue as string, replaceValue as string) as ReplaceAll<
+    Str,
+    SearchValue,
+    ReplaceValue
+  >;

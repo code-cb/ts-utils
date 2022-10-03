@@ -1,48 +1,34 @@
+import { assert, Equals } from 'common';
 import * as F from 'function';
 
-export namespace Main {
-  type NoInfer<Value> = F.NoInfer<Value>;
+describe(`F.NoInfer`, () => {
+  it(`works`, () => {
+    type NoInfer<Value> = F.NoInfer<Value>;
 
-  declare const f1: <T>(a: T, b: NoInfer<T>) => T;
-  f1('a', 'a');
-  f1(undefined, undefined);
-  // @ts-expect-error
-  f1('a', 'b');
+    const f0 = <T>(a: T, b: T): T => (F.noop(b), a);
+    const v0 = f0('a', 'b');
+    assert<Equals<typeof v0, 'a' | 'b'>>();
 
-  declare const f2: <T>(a: NoInfer<T>, b: T) => T;
-  f2('b', 'b');
-  f2(undefined, undefined);
-  // @ts-expect-error
-  f2('a', 'b');
+    const f1 = <T>(a: T, b: NoInfer<T>): T => (F.noop(b), a);
+    f1('a', 'a');
+    f1(undefined, undefined);
+    // @ts-expect-error
+    const v1 = f1('a', 'b');
+    assert<Equals<typeof v1, 'a'>>();
 
-  declare const f3: <T = never>(a: NoInfer<T>, b: NoInfer<T>) => T;
-  // @ts-expect-error
-  f3(undefined, undefined);
-  f3<string>('a', 'b');
-  // @ts-expect-error
-  f3('a', 'b');
-}
+    const f2 = <T>(a: NoInfer<T>, b: T): T => (F.noop(b), a);
+    f2('b', 'b');
+    f2(undefined, undefined);
+    // @ts-expect-error
+    const v2 = f2('a', 'b');
+    assert<Equals<typeof v2, 'b'>>();
 
-/**
- * Alternative implementations of `NoInfer`
- */
-export namespace A1 {
-  type NoInfer<Value> = Value & { [K in keyof Value]: Value[K] };
-
-  declare const f1: <T>(a: T, b: NoInfer<T>) => T;
-  f1('a', 'a');
-  f1(undefined, undefined);
-  // @ts-expect-error
-  f1('a', 'b');
-
-  declare const f2: <T>(a: NoInfer<T>, b: T) => T;
-  f2('b', 'b');
-  f2(undefined, undefined);
-  // @ts-expect-error
-  f2('a', 'b');
-
-  declare const f3: <T = never>(a: NoInfer<T>, b: NoInfer<T>) => T;
-  f3(undefined, undefined); // Oops, T is inferred as undefined
-  f3<string>('a', 'b');
-  f3('a', 'b'); // Oops, T is inferred as 'a' | 'b'
-}
+    const f3 = <T = never>(a: NoInfer<T>, b: NoInfer<T>): T => (F.noop(b), a);
+    // @ts-expect-error
+    f3(undefined, undefined);
+    f3<string>('a', 'b');
+    // @ts-expect-error
+    const v3 = f3('a', 'b');
+    assert<Equals<typeof v3, never>>();
+  });
+});

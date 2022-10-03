@@ -1,8 +1,12 @@
 import { assert, Equals, Primitive } from 'common';
 
-assert<
-  Equals<
-    Primitive,
-    string | number | boolean | null | undefined | symbol | bigint
-  >
->();
+describe(`Primitive`, () => {
+  it(`works`, () => {
+    assert<
+      Equals<
+        Primitive,
+        string | number | boolean | null | undefined | symbol | bigint
+      >
+    >();
+  });
+});

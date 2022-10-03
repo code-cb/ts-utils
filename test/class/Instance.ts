@@ -9,7 +9,11 @@ declare class MyError extends MyErrorBase {
   constructor(message: string, trace: string[]);
 }
 
-assert<Equals<C.Instance<typeof MyErrorBase>, MyErrorBase>>();
-assert<Equals<InstanceType<typeof MyErrorBase>, MyErrorBase>>();
-assert<Equals<C.Instance<typeof MyError>, MyError>>();
-assert<Equals<InstanceType<typeof MyError>, MyError>>();
+describe(`C.Instance`, () => {
+  it(`works`, () => {
+    assert<Equals<C.Instance<typeof MyErrorBase>, MyErrorBase>>();
+    assert<Equals<InstanceType<typeof MyErrorBase>, MyErrorBase>>();
+    assert<Equals<C.Instance<typeof MyError>, MyError>>();
+    assert<Equals<InstanceType<typeof MyError>, MyError>>();
+  });
+});

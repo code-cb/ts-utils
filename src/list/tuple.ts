@@ -4,11 +4,3 @@
  */
 
 export const tuple = <Args extends any[]>(...args: Args) => args;
-
-export type IsTuple<List extends ReadonlyArray<any>> = any[] extends List
-  ? false
-  : true;
-
-export type Tuple<List extends ReadonlyArray<any>> = any[] extends List
-  ? never
-  : List;

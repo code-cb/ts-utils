@@ -1,14 +1,20 @@
-export { type At } from './At';
+export { type At, at } from './at';
 export { type CharUnion as Char, type CharUnion } from './CharUnion';
-export { type First } from './First';
-export { type Head } from './Head';
-export { type Join } from './Join';
-export { type Last } from './Last';
-export { type Length } from './Length';
+export { type Concat, concat } from './concat';
+export { type First, first } from './first';
+export { type Head, head } from './head';
+export { type Join, join } from './join';
+export { type Last, last } from './last';
+export { type Length, length } from './length';
 export { type IsLiteral, type Literal } from './Literal';
-export { type Replace, type ReplaceAll } from './replace';
-export { type Reverse } from './Reverse';
-export { type Split } from './Split';
-export { type Tail } from './Tail';
+export { type Replace, replace, type ReplaceAll, replaceAll } from './replace';
+export { type Reverse, reverse } from './reverse';
+export { type Split, split } from './split';
+export { type Tail, tail } from './tail';
 export { type TemplatePart } from './TemplatePart';
-export { type ToTuple, type ToTuple as CharArray } from './ToTuple';
+export {
+  type ToTuple as CharArray,
+  type ToTuple,
+  toTuple as charArray,
+  toTuple,
+} from './toTuple';

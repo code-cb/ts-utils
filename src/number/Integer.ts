@@ -18,6 +18,6 @@ export type IsInteger<Num extends number> = number extends Num
   ? boolean
   : IsIntegerImpl<Num>;
 
-export const isInteger = Number.isInteger as <T extends number>(
-  value: T,
-) => value is Integer<T>;
+export const isInteger = Number.isInteger as <Num extends number>(
+  value: Num,
+) => IsInteger<Num>;

@@ -1,8 +1,15 @@
 import { asMaybe, assert, Equals, Maybe } from 'common';
 
-assert<Equals<Maybe<string>, string | undefined | null>>();
+describe(`Maybe`, () => {
+  it(`works`, () => {
+    assert<Equals<Maybe<string>, string | undefined | null>>();
+  });
+});
 
-declare const getDate: () => Date;
-
-const d = asMaybe(getDate());
-assert<Equals<typeof d, Date | undefined | null>>();
+describe(`asMaybe`, () => {
+  it(`works`, () => {
+    const getDate = () => new Date();
+    const d = asMaybe(getDate());
+    assert<Equals<typeof d, Date | undefined | null>>();
+  });
+});

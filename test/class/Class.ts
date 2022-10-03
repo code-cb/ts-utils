@@ -9,12 +9,20 @@ declare class MyError extends MyErrorBase {
   constructor(message: string, trace: string[]);
 }
 
-assert<Assignable<C.Class<[string, string[]], MyError>, typeof MyError>>();
-assert<Assignable<typeof MyError, C.Class<[string, string[]], MyError>>>();
+describe(`C.Class`, () => {
+  it(`works`, () => {
+    assert<Assignable<C.Class<[string, string[]], MyError>, typeof MyError>>();
+    assert<Assignable<typeof MyError, C.Class<[string, string[]], MyError>>>();
+  });
+});
 
-assert<
-  Assignable<C.AbstractClass<[string], MyErrorBase>, typeof MyErrorBase>
->();
-assert<
-  Assignable<typeof MyErrorBase, C.AbstractClass<[string], MyErrorBase>>
->();
+describe(`C.AbstractClass`, () => {
+  it(`works`, () => {
+    assert<
+      Assignable<C.AbstractClass<[string], MyErrorBase>, typeof MyErrorBase>
+    >();
+    assert<
+      Assignable<typeof MyErrorBase, C.AbstractClass<[string], MyErrorBase>>
+    >();
+  });
+});

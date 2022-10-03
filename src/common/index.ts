@@ -1,6 +1,10 @@
 export { AssertionError, assert } from './assert';
 export { assertNever } from './assertNever';
-export { type Assignable, type Assignable as Extends } from './Assignable';
+export {
+  type Assignable,
+  assignable,
+  type Assignable as Extends,
+} from './assignable';
 export { type Awaitable } from './Awaitable';
 export { type Cast } from './Cast';
 export {
@@ -11,7 +15,6 @@ export {
 export { type Equals, type IsEqual } from './Equals';
 export { exclude } from './exclude';
 export { type ExcludeStrict } from './ExcludeStrict';
-export { expectAssignable } from './expectAssignable';
 export { type ExtractStrict } from './ExtractStrict';
 export { type Id, id, id as subtypeOf, type Id as Subtype } from './id';
 export { type If } from './If';

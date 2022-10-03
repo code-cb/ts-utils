@@ -5,6 +5,10 @@ declare class MyError {
   constructor(msg: string);
 }
 
-assert<
-  Equals<C.Constructor<[string], MyError>, new (msg: string) => MyError>
->();
+describe(`C.Constructor`, () => {
+  it(`works`, () => {
+    assert<
+      Equals<C.Constructor<[string], MyError>, new (msg: string) => MyError>
+    >();
+  });
+});

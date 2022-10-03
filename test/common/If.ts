@@ -1,3 +1,8 @@
 import { assert, Equals, If } from 'common';
 
-assert<Equals<If<true, 'a', 'b'>, 'a'>>();
+describe(`If`, () => {
+  it(`works`, () => {
+    assert<Equals<If<true, 'a', 'b'>, 'a'>>();
+    assert<Equals<If<false, 'a', 'b'>, 'b'>>();
+  });
+});

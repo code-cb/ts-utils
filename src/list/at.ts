@@ -14,7 +14,7 @@ type AtBackward<
   ? AtBackward<Index, Head, [Last, ...Right]>
   : undefined;
 
-type AtImpl<
+export type AtImpl<
   List extends ReadonlyArray<any>,
   Index extends number,
 > = IsNegativeImpl<Index> extends true
