@@ -1,6 +1,6 @@
 {
   "name": "@codecb/ts-utils",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "license": "MIT",
   "author": {
     "email": "icodemyownlife@gmail.com",
@@ -100,7 +100,7 @@
     "@codecb/prettierrc": "0.0.1",
     "@codecb/tsconfigs": "0.0.9",
     "@types/jest": "29.1.1",
-    "@types/node": "18.8.0",
+    "@types/node": "18.8.2",
     "fast-glob": "3.2.12",
     "jest": "29.1.2",
     "prettier": "2.7.1",

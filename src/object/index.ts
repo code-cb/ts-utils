@@ -1,6 +1,6 @@
 export { type AnyReadonlyRecord, type AnyRecord } from './AnyRecord';
 export { type Assign, assign } from './assign';
-export { type Dict } from './Dict';
+export { type AnyDict, type Dict } from './Dict';
 export { dictOf } from './dictOf';
 export {
   type Entries,
