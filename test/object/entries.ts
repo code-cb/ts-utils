@@ -4,6 +4,9 @@ import * as O from 'object';
 describe(`O.Unionize, O.Entries and O.entries`, () => {
   it(`works`, () => {
     assert<Equals<O.Unionize<{}>, never>>();
+
+    assert<Equals<O.Entries<Record<string, Date>>, [string, Date][]>>();
+
     assert<Equals<O.Entries<{}>, []>>();
     const e1 = O.entries({});
     assert<Equals<typeof e1, []>>();

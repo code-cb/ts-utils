@@ -5,7 +5,7 @@ export {
   assignable,
   type Assignable as Extends,
 } from './assignable';
-export { type Awaitable } from './Awaitable';
+export { type Awaitable, type Awaitable as MaybePromise } from './Awaitable';
 export { type Cast } from './Cast';
 export {
   type Compute,
@@ -21,7 +21,9 @@ export { type If } from './If';
 export { is } from './is';
 export { type IsAny } from './IsAny';
 export { type IsNever } from './IsNever';
+export { isNonNullable } from './isNonNullable';
 export { isPromiseLike } from './isPromiseLike';
+export { isTruthy, type Truthy } from './isTruthy';
 export { type IsUnknown } from './IsUnknown';
 export { asMaybe, type Maybe } from './Maybe';
 export { asNullable, type Nullable } from './Nullable';

@@ -1,13 +1,9 @@
 import { asOptional, assert, Equals, Optional } from 'common';
 
-describe(`Optional`, () => {
+describe(`Optional and asOptional`, () => {
   it(`works`, () => {
     assert<Equals<Optional<number>, number | undefined>>();
-  });
-});
 
-describe(`asOptional`, () => {
-  it(`works`, () => {
     const obj = { a: 1, b: 2 };
     type ObjKey = keyof typeof obj;
 

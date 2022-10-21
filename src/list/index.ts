@@ -2,8 +2,10 @@ export { type Append, append } from './append';
 export { arrayOf } from './arrayOf';
 export {
   type ArrayOrSingle,
+  type ArrayOrSingle as MaybeArray,
   type ElementOrSingle,
   type ReadonlyArrayOrSingle,
+  type ReadonlyArrayOrSingle as MaybeReadonlyArray,
 } from './ArrayOrSingle';
 export { type At, at } from './at';
 export { type Element } from './Element';
