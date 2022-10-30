@@ -2,12 +2,7 @@ export { type AnyReadonlyRecord, type AnyRecord } from './AnyRecord';
 export { type Assign, assign } from './assign';
 export { type AnyDict, type Dict } from './Dict';
 export { dictOf } from './dictOf';
-export {
-  type Entries,
-  entries,
-  type Unionize,
-  type Unionize as Entry,
-} from './entries';
+export { type Entries, entries, type Entry } from './entries';
 export { type Exclusive } from './Exclusive';
 export {
   fromEntries,
@@ -40,6 +35,7 @@ export { type Overwrite } from './Overwrite';
 export { type PickByValue } from './PickByValue';
 export { type ReadonlyKey } from './ReadonlyKey';
 export { type HasRequiredKey, type RequiredKey } from './RequiredKey';
+export { type Unionize } from './Unionize';
 export { type Value } from './Value';
 export { type WithPartial, withPartial } from './withPartial';
 export { type Writable } from './Writable';

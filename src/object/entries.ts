@@ -8,14 +8,14 @@
 import { Equals, If } from '../common';
 import { Value } from './Value';
 
-export type Unionize<Obj extends object> = Value<{
+export type Entry<Obj extends object> = Value<{
   [K in keyof Obj]-?: [K, Obj[K]];
 }>;
 
 export type Entries<Obj extends object> = If<
   Equals<Obj, {}>,
   [],
-  Array<Unionize<Obj>>
+  Array<Entry<Obj>>
 >;
 
 export const entries = <Obj extends object>(obj: Obj) =>

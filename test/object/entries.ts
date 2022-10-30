@@ -1,9 +1,9 @@
 import { assert, Equals } from 'common';
 import * as O from 'object';
 
-describe(`O.Unionize, O.Entries and O.entries`, () => {
+describe(`O.Entry, O.Entries and O.entries`, () => {
   it(`works`, () => {
-    assert<Equals<O.Unionize<{}>, never>>();
+    assert<Equals<O.Entry<{}>, never>>();
 
     assert<Equals<O.Entries<Record<string, Date>>, [string, Date][]>>();
 
@@ -18,7 +18,7 @@ describe(`O.Unionize, O.Entries and O.entries`, () => {
     }
     assert<
       Equals<
-        O.Unionize<O1>,
+        O.Entry<O1>,
         ['a', number] | ['b', (() => Promise<number>) | undefined]
       >
     >();
