@@ -3,6 +3,7 @@ import { asOptional, assert, Equals, Optional } from 'common';
 describe(`Optional and asOptional`, () => {
   it(`works`, () => {
     assert<Equals<Optional<number>, number | undefined>>();
+    assert<Equals<Optional<object | null>, object | null | undefined>>();
 
     const obj = { a: 1, b: 2 };
     type ObjKey = keyof typeof obj;

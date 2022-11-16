@@ -26,6 +26,12 @@ export { isPromiseLike } from './isPromiseLike';
 export { isTruthy, type Truthy } from './isTruthy';
 export { type IsUnknown } from './IsUnknown';
 export { asMaybe, type Maybe } from './Maybe';
+export {
+  asNonOptional as asDefined,
+  asNonOptional,
+  type NonOptional as Defined,
+  type NonOptional,
+} from './NonOptional';
 export { asNullable, type Nullable } from './Nullable';
 export { asOptional, type Optional } from './Optional';
 export { type Primitive } from './Primitive';

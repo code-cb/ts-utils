@@ -1,3 +1,3 @@
 export type Nullable<Value> = Value | null;
 
-export const asNullable = <Value>(value: Value): Nullable<Value> => value;
+export const asNullable = <Value>(value: Value) => value as Nullable<Value>;
