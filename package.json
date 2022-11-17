@@ -1,6 +1,6 @@
 {
   "name": "@codecb/ts-utils",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "license": "MIT",
   "author": {
     "email": "icodemyownlife@gmail.com",
@@ -19,39 +19,66 @@
   "exports": {
     "./boolean": {
       "import": "./dist/esm/boolean.mjs",
-      "require": "./dist/cjs/boolean.cjs"
+      "require": "./dist/cjs/boolean.cjs",
+      "types": [
+        "./dist/esm/boolean.d.ts"
+      ]
     },
     "./class": {
       "import": "./dist/esm/class.mjs",
-      "require": "./dist/cjs/class.cjs"
+      "require": "./dist/cjs/class.cjs",
+      "types": [
+        "./dist/esm/class.d.ts"
+      ]
     },
     "./common": {
       "import": "./dist/esm/common.mjs",
-      "require": "./dist/cjs/common.cjs"
+      "require": "./dist/cjs/common.cjs",
+      "types": [
+        "./dist/esm/common.d.ts"
+      ]
     },
     "./function": {
       "import": "./dist/esm/function.mjs",
-      "require": "./dist/cjs/function.cjs"
+      "require": "./dist/cjs/function.cjs",
+      "types": [
+        "./dist/esm/function.d.ts"
+      ]
     },
     "./list": {
       "import": "./dist/esm/list.mjs",
-      "require": "./dist/cjs/list.cjs"
+      "require": "./dist/cjs/list.cjs",
+      "types": [
+        "./dist/esm/list.d.ts"
+      ]
     },
     "./number": {
       "import": "./dist/esm/number.mjs",
-      "require": "./dist/cjs/number.cjs"
+      "require": "./dist/cjs/number.cjs",
+      "types": [
+        "./dist/esm/number.d.ts"
+      ]
     },
     "./object": {
       "import": "./dist/esm/object.mjs",
-      "require": "./dist/cjs/object.cjs"
+      "require": "./dist/cjs/object.cjs",
+      "types": [
+        "./dist/esm/object.d.ts"
+      ]
     },
     "./string": {
       "import": "./dist/esm/string.mjs",
-      "require": "./dist/cjs/string.cjs"
+      "require": "./dist/cjs/string.cjs",
+      "types": [
+        "./dist/esm/string.d.ts"
+      ]
     },
     "./union": {
       "import": "./dist/esm/union.mjs",
-      "require": "./dist/cjs/union.cjs"
+      "require": "./dist/cjs/union.cjs",
+      "types": [
+        "./dist/esm/union.d.ts"
+      ]
     }
   },
   "typesVersions": {
