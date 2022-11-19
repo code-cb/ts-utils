@@ -15,7 +15,6 @@ export {
   type ObjectWithProperty,
 } from './hasProperty';
 export { type Invert } from './Invert';
-export { type KeyByValue } from './KeyByValue';
 export { type Key, keys } from './keys';
 export {
   type JsonArray,
@@ -28,11 +27,14 @@ export { type MarkReadonly } from './MarkReadonly';
 export { type MarkRequired } from './MarkRequired';
 export { type MarkWritable } from './MarkWritable';
 export { type MethodNames } from './MethodNames';
-export { type OmitByValue } from './OmitByValue';
 export { type OmitStrict } from './OmitStrict';
 export { type HasOptionalKey, type OptionalKey } from './OptionalKey';
 export { type Overwrite } from './Overwrite';
-export { type PickByValue } from './PickByValue';
+export {
+  type KeyByValue,
+  type OmitByValue,
+  type PickByValue,
+} from './KeyByValue';
 export { type ReadonlyKey } from './ReadonlyKey';
 export { type HasRequiredKey, type RequiredKey } from './RequiredKey';
 export { type Unionize } from './Unionize';
