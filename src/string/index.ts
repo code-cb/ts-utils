@@ -7,6 +7,7 @@ export { type Join, join } from './join';
 export { type Last, last } from './last';
 export { type Length, length } from './length';
 export { type IsLiteral, type Literal } from './Literal';
+export { type PathParams } from './PathParams';
 export { type Replace, replace, type ReplaceAll, replaceAll } from './replace';
 export { type Reverse, reverse } from './reverse';
 export { type Split, split } from './split';
