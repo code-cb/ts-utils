@@ -1,4 +1,4 @@
-import fg from 'fast-glob';
+import FastGlob from 'fast-glob';
 import { basename, dirname } from 'node:path';
 import { defineConfig, ModuleFormat } from 'rollup';
 import { terser } from 'rollup-plugin-terser';
@@ -20,7 +20,7 @@ const extensionMap: Record<ModuleFormat, string> = {
   umd: 'js',
 };
 const formats: ModuleFormat[] = ['cjs', 'esm'];
-const submodules = fg.sync(['src/*/index.{ts,tsx}'], { stats: false });
+const submodules = FastGlob.sync(['src/*/index.{ts,tsx}'], { stats: false });
 
 export default submodules.map(path => {
   const moduleName = basename(dirname(path));
