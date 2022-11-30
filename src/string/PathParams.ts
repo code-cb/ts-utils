@@ -1,3 +1,8 @@
+/**
+ * References:
+ * - https://github.com/DefinitelyTyped/DefinitelyTyped/blob/6fbaad2125fa981ecf4916f2af21bc15f035312b/types/express-serve-static-core/index.d.ts#L106
+ */
+
 import { If } from '../common';
 import { IsLiteral } from './Literal';
 
