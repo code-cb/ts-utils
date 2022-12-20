@@ -1,6 +1,7 @@
 {
   "name": "@codecb/ts-utils",
   "version": "0.6.5",
+  "description": "🛠 A modern and practical TypeScript type utility library",
   "license": "MIT",
   "author": {
     "email": "icodemyownlife@gmail.com",
@@ -8,7 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/code-cb/ts-utils.git"
+    "url": "https://github.com/code-cb/ts-utils"
+  },
+  "homepage": "https://github.com/code-cb/ts-utils",
+  "bugs": {
+    "url": "https://github.com/code-cb/ts-utils/issues"
   },
   "files": [
     "dist"
