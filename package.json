@@ -1,6 +1,6 @@
 {
   "name": "@codecb/ts-utils",
-  "version": "0.6.5",
+  "version": "0.7.0",
   "description": "🛠 A modern and practical TypeScript type utility library",
   "license": "MIT",
   "author": {
@@ -20,100 +20,100 @@
   ],
   "main": "./dist/cjs/common.cjs",
   "module": "./dist/esm/common.mjs",
-  "types": "./dist/esm/common.d.ts",
+  "types": "./dist/esm/common/index.d.ts",
   "exports": {
     "./boolean": {
       "import": "./dist/esm/boolean.mjs",
       "require": "./dist/cjs/boolean.cjs",
       "types": [
-        "./dist/esm/boolean.d.ts"
+        "./dist/esm/boolean/index.d.ts"
       ]
     },
     "./class": {
       "import": "./dist/esm/class.mjs",
       "require": "./dist/cjs/class.cjs",
       "types": [
-        "./dist/esm/class.d.ts"
+        "./dist/esm/class/index.d.ts"
       ]
     },
     "./common": {
       "import": "./dist/esm/common.mjs",
       "require": "./dist/cjs/common.cjs",
       "types": [
-        "./dist/esm/common.d.ts"
+        "./dist/esm/common/index.d.ts"
       ]
     },
     "./function": {
       "import": "./dist/esm/function.mjs",
       "require": "./dist/cjs/function.cjs",
       "types": [
-        "./dist/esm/function.d.ts"
+        "./dist/esm/function/index.d.ts"
       ]
     },
     "./list": {
       "import": "./dist/esm/list.mjs",
       "require": "./dist/cjs/list.cjs",
       "types": [
-        "./dist/esm/list.d.ts"
+        "./dist/esm/list/index.d.ts"
       ]
     },
     "./number": {
       "import": "./dist/esm/number.mjs",
       "require": "./dist/cjs/number.cjs",
       "types": [
-        "./dist/esm/number.d.ts"
+        "./dist/esm/number/index.d.ts"
       ]
     },
     "./object": {
       "import": "./dist/esm/object.mjs",
       "require": "./dist/cjs/object.cjs",
       "types": [
-        "./dist/esm/object.d.ts"
+        "./dist/esm/object/index.d.ts"
       ]
     },
     "./string": {
       "import": "./dist/esm/string.mjs",
       "require": "./dist/cjs/string.cjs",
       "types": [
-        "./dist/esm/string.d.ts"
+        "./dist/esm/string/index.d.ts"
       ]
     },
     "./union": {
       "import": "./dist/esm/union.mjs",
       "require": "./dist/cjs/union.cjs",
       "types": [
-        "./dist/esm/union.d.ts"
+        "./dist/esm/union/index.d.ts"
       ]
     }
   },
   "typesVersions": {
     "*": {
       "boolean": [
-        "dist/esm/boolean.d.ts"
+        "dist/esm/boolean/index.d.ts"
       ],
       "class": [
-        "dist/esm/class.d.ts"
+        "dist/esm/class/index.d.ts"
       ],
       "common": [
-        "dist/esm/common.d.ts"
+        "dist/esm/common/index.d.ts"
       ],
       "function": [
-        "dist/esm/function.d.ts"
+        "dist/esm/function/index.d.ts"
       ],
       "list": [
-        "dist/esm/list.d.ts"
+        "dist/esm/list/index.d.ts"
       ],
       "number": [
-        "dist/esm/number.d.ts"
+        "dist/esm/number/index.d.ts"
       ],
       "object": [
-        "dist/esm/object.d.ts"
+        "dist/esm/object/index.d.ts"
       ],
       "string": [
-        "dist/esm/string.d.ts"
+        "dist/esm/string/index.d.ts"
       ],
       "union": [
-        "dist/esm/union.d.ts"
+        "dist/esm/union/index.d.ts"
       ]
     }
   },
