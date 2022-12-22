@@ -17,4 +17,3 @@ export type MarkRequired<
   Prop extends keyof Obj,
   MarkNonOptional extends boolean = true,
 > = Omit<Obj, Prop> & Required<Pick<Obj, Prop>, MarkNonOptional>;
-

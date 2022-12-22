@@ -4,10 +4,10 @@ import * as O from 'object';
 describe(`O.KeyByValue, O.OmitByValue and O.PickByValue`, () => {
   it(`works`, () => {
     interface I1 {
-      a: number;
+      readonly a: number;
       b?: boolean;
       c: number;
-      d: string;
+      readonly d: string;
       e: any;
       f: unknown;
       g: number | string;
@@ -17,20 +17,31 @@ describe(`O.KeyByValue, O.OmitByValue and O.PickByValue`, () => {
     assert<
       Equals<
         O.OmitByValue<I1, number>,
-        { b?: boolean; d: string; e: any; f: unknown; g: number | string }
+        {
+          b?: boolean;
+          readonly d: string;
+          e: any;
+          f: unknown;
+          g: number | string;
+        }
       >
     >();
-    assert<Equals<O.PickByValue<I1, number>, { a: number; c: number }>>();
+    assert<
+      Equals<O.PickByValue<I1, number>, { readonly a: number; c: number }>
+    >();
 
     assert<Equals<O.KeyByValue<I1, number, true>, 'a' | 'c' | 'e'>>();
     assert<
       Equals<
         O.OmitByValue<I1, number, true>,
-        { b?: boolean; d: string; f: unknown; g: number | string }
+        { b?: boolean; readonly d: string; f: unknown; g: number | string }
       >
     >();
     assert<
-      Equals<O.PickByValue<I1, number, true>, { a: number; c: number; e: any }>
+      Equals<
+        O.PickByValue<I1, number, true>,
+        { readonly a: number; c: number; e: any }
+      >
     >();
 
     assert<Equals<O.KeyByValue<I1, number | string>, 'a' | 'c' | 'd' | 'g'>>();
@@ -43,7 +54,12 @@ describe(`O.KeyByValue, O.OmitByValue and O.PickByValue`, () => {
     assert<
       Equals<
         O.PickByValue<I1, number | string>,
-        { a: number; c: number; d: string; g: number | string }
+        {
+          readonly a: number;
+          c: number;
+          readonly d: string;
+          g: number | string;
+        }
       >
     >();
 
@@ -62,7 +78,13 @@ describe(`O.KeyByValue, O.OmitByValue and O.PickByValue`, () => {
     assert<
       Equals<
         O.PickByValue<I1, number | string, true>,
-        { a: number; c: number; d: string; e: any; g: number | string }
+        {
+          readonly a: number;
+          c: number;
+          readonly d: string;
+          e: any;
+          g: number | string;
+        }
       >
     >();
 
@@ -71,10 +93,10 @@ describe(`O.KeyByValue, O.OmitByValue and O.PickByValue`, () => {
       Equals<
         O.OmitByValue<I1, boolean>,
         {
-          a: number;
+          readonly a: number;
           b?: boolean;
           c: number;
-          d: string;
+          readonly d: string;
           e: any;
           f: unknown;
           g: number | string;
@@ -88,10 +110,10 @@ describe(`O.KeyByValue, O.OmitByValue and O.PickByValue`, () => {
       Equals<
         O.OmitByValue<I1, boolean, true>,
         {
-          a: number;
+          readonly a: number;
           b?: boolean;
           c: number;
-          d: string;
+          readonly d: string;
           f: unknown;
           g: number | string;
         }
@@ -104,9 +126,9 @@ describe(`O.KeyByValue, O.OmitByValue and O.PickByValue`, () => {
       Equals<
         O.OmitByValue<I1, boolean | undefined>,
         {
-          a: number;
+          readonly a: number;
           c: number;
-          d: string;
+          readonly d: string;
           e: any;
           f: unknown;
           g: number | string;
@@ -119,7 +141,13 @@ describe(`O.KeyByValue, O.OmitByValue and O.PickByValue`, () => {
     assert<
       Equals<
         O.OmitByValue<I1, boolean | undefined, true>,
-        { a: number; c: number; d: string; f: unknown; g: number | string }
+        {
+          readonly a: number;
+          c: number;
+          readonly d: string;
+          f: unknown;
+          g: number | string;
+        }
       >
     >();
     assert<
@@ -134,10 +162,10 @@ describe(`O.KeyByValue, O.OmitByValue and O.PickByValue`, () => {
       Equals<
         O.OmitByValue<I1, Function>,
         {
-          a: number;
+          readonly a: number;
           b?: boolean;
           c: number;
-          d: string;
+          readonly d: string;
           e: any;
           f: unknown;
           g: number | string;
@@ -151,10 +179,10 @@ describe(`O.KeyByValue, O.OmitByValue and O.PickByValue`, () => {
       Equals<
         O.OmitByValue<I1, Function, true>,
         {
-          a: number;
+          readonly a: number;
           b?: boolean;
           c: number;
-          d: string;
+          readonly d: string;
           f: unknown;
           g: number | string;
         }

@@ -33,7 +33,7 @@ describe(`N.IsNegative and N.Negative`, () => {
 
     assert<Equals<N.IsNegative<number>, boolean>>();
     assert<Equals<N.Negative<number>, number>>();
-    
+
     assert<Equals<N.IsNegative<bigint>, boolean>>();
     assert<Equals<N.Negative<bigint>, bigint>>();
   });
