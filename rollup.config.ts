@@ -2,7 +2,7 @@ import FastGlob from 'fast-glob';
 import { basename, dirname } from 'node:path';
 import { defineConfig, ModuleFormat } from 'rollup';
 import { terser } from 'rollup-plugin-terser';
-import ts from 'rollup-plugin-ts';
+import ts from 'rollup-plugin-typescript2';
 
 const isDev =
   process.env['NODE_ENV'] === 'development' ||
@@ -33,19 +33,7 @@ export default submodules.map(path => {
       format,
       sourcemap: isDev,
     })),
-    plugins: [
-      ts({
-        hook: {
-          outputPath(path, kind) {
-            return kind === 'declaration' || kind === 'declarationMap'
-              ? path.replace(/\.d\.[mc]ts$/, '.d.ts')
-              : path;
-          },
-        },
-        tsconfig: 'tsconfig.build.json',
-      }),
-      !isDev && terser(),
-    ],
+    plugins: [ts({ tsconfig: 'tsconfig.build.json' }), !isDev && terser()],
     onwarn: (warning, defaultHandler) => {
       !['EMPTY_BUNDLE'].includes(warning.code!) && defaultHandler(warning);
     },
