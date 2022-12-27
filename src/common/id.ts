@@ -1,6 +1,7 @@
 /**
  * References:
  * - https://github.com/garronej/tsafe/blob/4f57bbfd5a35ac9b70f84ccfc59a436bff014af2/src/id.ts
+ * - https://effectivetypescript.com/2020/06/16/typed-identity-functions/
  */
 
 export function id<Value>(value: Value): Value;
