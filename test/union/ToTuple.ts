@@ -16,5 +16,7 @@ describe(`U.ToTuple`, () => {
     assert<Assignable<T1, PossibleTuples>>();
     assert<B.Not<Equals<T1, PossibleTuples>>>();
     assert<B.Not<IsNever<T1>>>();
+
+    assert<Equals<U.ToTupleUnion<keyof Obj1>, PossibleTuples>>();
   });
 });

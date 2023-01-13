@@ -15,3 +15,14 @@ type ToTupleImpl<
   : ToTupleImpl<Exclude<Union, SomeValue>, [SomeValue, ...Result]>;
 
 export type ToTuple<Union> = ToTupleImpl<Union>;
+
+type ToTupleUnionImpl<
+  Union extends PropertyKey,
+  Result extends PropertyKey[] = [],
+> = [Union] extends [never]
+  ? Result
+  : {
+      [K in Union]: ToTupleUnionImpl<Exclude<Union, K>, [...Result, K]>;
+    }[Union];
+
+export type ToTupleUnion<Union extends PropertyKey> = ToTupleUnionImpl<Union>;
