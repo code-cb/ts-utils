@@ -53,7 +53,7 @@
     json5 "^2.2.1"
     semver "^6.3.0"
 
-"@babel/core@^7.20.12":
+"@babel/core@^7.20":
   version "7.20.12"
   resolved "https://registry.npmjs.org/@babel/core/-/core-7.20.12.tgz#7930db57443c6714ad216953d1356dac0eb8496d"
   integrity sha512-XsMfHovsUYHFMdrIHkZphTN/2Hzzi78R08NuHfDBehym2VsPDL6Zn/JAD/JQdnRvbSsbQc4mVaU1m6JgtTEElg==
@@ -1191,10 +1191,10 @@
   resolved "https://registry.npmjs.org/@codecb/jest-config-ts/-/jest-config-ts-0.0.5.tgz#9c84b181228eeedff1264eaa0247525bec2716eb"
   integrity sha512-oOCLdpP/nGNhTdCE4z4F6AS2m51ZBeqjwk9h6Its8mgk2eZ+Ekucs2ikxcdVrXKISo/yTOENEljXYJ7zeKLbXw==
 
-"@codecb/prettierrc@0.0.1":
-  version "0.0.1"
-  resolved "https://registry.npmjs.org/@codecb/prettierrc/-/prettierrc-0.0.1.tgz#11cf15436b9a2ce36b632a39b877df85c2fa4364"
-  integrity sha512-yWsYW1SJEJ49i2E8R10R6a73jvFc5FfuwzNR6PQnCgKrs3fa3lf8fEhsSNaTefw+jTWPLOU4EjBJAgQ24c/mmA==
+"@codecb/prettierrc@0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/@codecb/prettierrc/-/prettierrc-0.0.2.tgz#1a5f878dcf29675088d70cf188b56b0696934b44"
+  integrity sha512-oGjUD6zIpx9MWZew6O2hJIWgf/WYo5hQRj9dOr1b8LofuoXVjpyN0Ces7nAkUro4cGJDrfbVWJqMW16P94OZ7A==
 
 "@codecb/tsconfigs@0.0.10":
   version "0.0.10"
@@ -1591,10 +1591,10 @@
   dependencies:
     "@types/istanbul-lib-report" "*"
 
-"@types/jest@^29.2.5":
-  version "29.2.5"
-  resolved "https://registry.npmjs.org/@types/jest/-/jest-29.2.5.tgz#c27f41a9d6253f288d1910d3c5f09484a56b73c0"
-  integrity sha512-H2cSxkKgVmqNHXP7TC2L/WUorrZu8ZigyRywfVzv6EyBlxj39n4C00hjXYQWsbwqgElaj/CiAeSRmk5GoaKTgw==
+"@types/jest@^29.2":
+  version "29.2.6"
+  resolved "https://registry.npmjs.org/@types/jest/-/jest-29.2.6.tgz#1d43c8e533463d0437edef30b2d45d5aa3d95b0a"
+  integrity sha512-XEUC/Tgw3uMh6Ho8GkUtQ2lPhY5Fmgyp3TdlkTJs1W9VgNxs+Ow/x3Elh8lHQKqCbZL0AubQuqWjHVT033Hhrw==
   dependencies:
     expect "^29.0.0"
     pretty-format "^29.0.0"
@@ -1604,7 +1604,7 @@
   resolved "https://registry.npmjs.org/@types/node/-/node-18.6.4.tgz#fd26723a8a3f8f46729812a7f9b4fc2d1608ed39"
   integrity sha512-I4BD3L+6AWiUobfxZ49DlU43gtI+FTHSv9pE2Zekg6KjMpre4ByusaljW3vYSLJrvQ1ck1hUaeVu8HVlY3vzHg==
 
-"@types/node@^18.11.18":
+"@types/node@^18.11":
   version "18.11.18"
   resolved "https://registry.npmjs.org/@types/node/-/node-18.11.18.tgz#8dfb97f0da23c2293e554c5a50d61ef134d7697f"
   integrity sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==
@@ -3021,10 +3021,10 @@ pkg-dir@^4.1.0, pkg-dir@^4.2.0:
   dependencies:
     find-up "^4.0.0"
 
-prettier@^2.8.2:
-  version "2.8.2"
-  resolved "https://registry.npmjs.org/prettier/-/prettier-2.8.2.tgz#c4ea1b5b454d7c4b59966db2e06ed7eec5dfd160"
-  integrity sha512-BtRV9BcncDyI2tsuS19zzhzoxD8Dh8LiCx7j7tHzrkz8GFXAexeWFdi22mjE1d16dftH2qNaytVxqiRTGlMfpw==
+prettier@^2.8:
+  version "2.8.3"
+  resolved "https://registry.npmjs.org/prettier/-/prettier-2.8.3.tgz#ab697b1d3dd46fb4626fbe2f543afe0cc98d8632"
+  integrity sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==
 
 pretty-format@^29.0.0, pretty-format@^29.0.3:
   version "29.0.3"
@@ -3174,10 +3174,10 @@ rollup-plugin-typescript2@0.34.1:
     semver "^7.3.7"
     tslib "^2.4.0"
 
-rollup@^3.10.0:
-  version "3.10.0"
-  resolved "https://registry.npmjs.org/rollup/-/rollup-3.10.0.tgz#6eb19196d8b3b375ca651cb78261faac48e24cd6"
-  integrity sha512-JmRYz44NjC1MjVF2VKxc0M1a97vn+cDxeqWmnwyAF4FvpjK8YFdHpaqvQB+3IxCvX05vJxKZkoMDU8TShhmJVA==
+rollup@^3.10:
+  version "3.10.1"
+  resolved "https://registry.npmjs.org/rollup/-/rollup-3.10.1.tgz#56278901ed11fc2898421e8e3e2c8155bc7b40b4"
+  integrity sha512-3Er+yel3bZbZX1g2kjVM+FW+RUWDxbG87fcqFM5/9HbPCTpbVp6JOLn7jlxnNlbu7s/N/uDA4EV/91E2gWnxzw==
   optionalDependencies:
     fsevents "~2.3.2"
 
