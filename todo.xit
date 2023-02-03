@@ -35,6 +35,7 @@ Mutate methods may be not good to target but we can provide a another immutable 
 + unshift -> prepend
 [ ] String methods/properties:
 + at
++ camelToKebab
 - charAt -> at
 - concat
 - endsWith

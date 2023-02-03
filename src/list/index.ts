@@ -1,32 +1,32 @@
-export { type Append, append } from './append';
+export { append, type Append } from './append';
 export { arrayOf } from './arrayOf';
 export {
   type ArrayOrSingle,
   type ArrayOrSingle as MaybeArray,
   type ElementOrSingle,
-  type ReadonlyArrayOrSingle,
   type ReadonlyArrayOrSingle as MaybeReadonlyArray,
+  type ReadonlyArrayOrSingle,
 } from './ArrayOrSingle';
-export { type At, at } from './at';
+export { at, type At } from './at';
 export { type Element } from './Element';
-export { type FilterIn, filterIn } from './filterIn';
-export { type FilterOut, filterOut } from './filterOut';
-export { type First, first } from './first';
+export { filterIn, type FilterIn } from './filterIn';
+export { filterOut, type FilterOut } from './filterOut';
+export { first, type First } from './first';
 export { has } from './has';
-export { type Head, head } from './head';
+export { head, type Head } from './head';
 export { includes } from './includes';
 export { inSubset } from './inSubset';
-export { type IsEmpty, isEmpty } from './isEmpty';
-export { type Last, last } from './last';
+export { isEmpty, type IsEmpty } from './isEmpty';
+export { last, type Last } from './last';
 export {
   type IsLiteral,
   type IsLiteral as IsTuple,
   type Literal,
-  type Literal as Tuple
+  type Literal as Tuple,
 } from './Literal';
-export { type Pop, pop } from './pop';
-export { type Prepend, prepend } from './prepend';
-export { type Shift, shift } from './shift';
+export { pop, type Pop } from './pop';
+export { prepend, type Prepend } from './prepend';
+export { shift, type Shift } from './shift';
 export { type SubList } from './SubList';
-export { type Tail, tail } from './tail';
+export { tail, type Tail } from './tail';
 export { tuple } from './tuple';
