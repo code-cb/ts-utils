@@ -5,8 +5,5 @@
 
 import { IsAny } from './IsAny';
 
-export type IsUnknown<Value> = IsAny<Value> extends true
-  ? false
-  : unknown extends Value
-  ? true
-  : false;
+export type IsUnknown<Value> =
+  IsAny<Value> extends true ? false : unknown extends Value ? true : false;

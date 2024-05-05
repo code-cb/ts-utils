@@ -8,8 +8,8 @@ type One<
 > = boolean extends Condition
   ? boolean
   : [Condition] extends [WhenAny]
-  ? WhenAny
-  : WhenAll;
+    ? WhenAny
+    : WhenAll;
 
 type AllOrAny<
   Conditions extends ReadonlyArray<boolean>,

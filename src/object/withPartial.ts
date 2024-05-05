@@ -9,4 +9,4 @@ export const withPartial =
   <Obj extends object>() =>
   <PartialObj extends Partial<Obj>>(partialObj: PartialObj) =>
   (o: WithPartial<Obj, PartialObj>) =>
-    ({ ...partialObj, ...o } as unknown as Obj);
+    ({ ...partialObj, ...o }) as unknown as Obj;

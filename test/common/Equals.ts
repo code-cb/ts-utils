@@ -53,11 +53,12 @@ describe(`Equals`, () => {
   });
 
   test(`alternative to Equals`, () => {
-    type Equals<A, B> = Assignable<A, B> extends true
-      ? Assignable<B, A> extends true
-        ? true
-        : false
-      : false;
+    type Equals<A, B> =
+      Assignable<A, B> extends true
+        ? Assignable<B, A> extends true
+          ? true
+          : false
+        : false;
     assert<Equals<1, 1>>();
     assert<B.Not<Equals<1, 2>>>();
     assert<Equals<{ a: 1; b: 2 }, { a: 1 } & { b: 2 }>>();

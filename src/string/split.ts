@@ -22,8 +22,8 @@ export type SplitImpl<
 > = Str extends `${infer Left}${Separator}${infer Right}`
   ? SplitImpl<Right, Separator, [...Result, Left]>
   : Str extends ''
-  ? Result
-  : [...Result, Str];
+    ? Result
+    : [...Result, Str];
 
 export type Split<Str extends string, Separator extends TemplatePart> = If<
   And<IsLiteral<Str>, IsLiteralTemplatePart<Separator>>,

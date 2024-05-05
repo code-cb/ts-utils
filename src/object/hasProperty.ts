@@ -15,9 +15,10 @@ type ObjectMayHaveProperty<Obj, Prop extends PropertyKey> = Extract<
 export type ObjectWithProperty<
   Obj extends Maybe<object>,
   Prop extends PropertyKey,
-> = ObjectMayHaveProperty<Obj, Prop> extends never
-  ? Obj & Record<Prop, unknown>
-  : MarkRequired<ObjectMayHaveProperty<Obj, Prop>, Prop, false>;
+> =
+  ObjectMayHaveProperty<Obj, Prop> extends never
+    ? Obj & Record<Prop, unknown>
+    : MarkRequired<ObjectMayHaveProperty<Obj, Prop>, Prop, false>;
 
 /**
  * Since TypeScript 4.9 we can the `in` property to have a quite similar effect. See the tests for more detail.

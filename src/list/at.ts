@@ -11,15 +11,13 @@ type AtBackward<
 > = Right['length'] extends Index
   ? Right[0]
   : Left extends readonly [...infer Head, infer Last]
-  ? AtBackward<Index, Head, [Last, ...Right]>
-  : undefined;
+    ? AtBackward<Index, Head, [Last, ...Right]>
+    : undefined;
 
-export type AtImpl<
-  List extends ReadonlyArray<any>,
-  Index extends number,
-> = IsNegativeImpl<Index> extends true
-  ? AtBackward<AbsoluteNumber<Index>, List, []>
-  : List[Index];
+export type AtImpl<List extends ReadonlyArray<any>, Index extends number> =
+  IsNegativeImpl<Index> extends true
+    ? AtBackward<AbsoluteNumber<Index>, List, []>
+    : List[Index];
 
 export type At<List extends ReadonlyArray<any>, Index extends number> = If<
   And<IsArrayLiteral<List>, IsNumLiteral<Index>>,

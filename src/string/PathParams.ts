@@ -9,8 +9,8 @@ import { IsLiteral } from './Literal';
 type PathTail<Path extends string> = Path extends `:${infer Tail}`
   ? Tail
   : Path extends `${string}/:${infer Tail}`
-  ? Tail
-  : '';
+    ? Tail
+    : '';
 
 type PathKeyImpl<
   Path extends string,
@@ -19,8 +19,8 @@ type PathKeyImpl<
 > = Tail extends `${infer K}/${infer Rest}`
   ? PathKeyImpl<Rest, Key | K>
   : Tail extends ''
-  ? Key
-  : Key | Tail;
+    ? Key
+    : Key | Tail;
 
 export type PathParams<Path extends string> = If<
   IsLiteral<Path>,

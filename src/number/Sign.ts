@@ -13,8 +13,8 @@ type SignStr<
   Result extends NumericSign = NumStr extends '0'
     ? NumericSign.Zero
     : NumStr extends `-${Numeric}`
-    ? NumericSign.Negative
-    : NumericSign.Positive,
+      ? NumericSign.Negative
+      : NumericSign.Positive,
 > = Result;
 
 export type Sign<Num extends Numeric> = If<

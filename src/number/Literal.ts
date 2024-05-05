@@ -8,11 +8,11 @@ import { Numeric } from './Numeric';
 export type IsLiteral<Num extends Numeric> = number extends Num
   ? false
   : bigint extends Num
-  ? false
-  : true;
+    ? false
+    : true;
 
 export type Literal<Num extends Numeric> = number extends Num
   ? never
   : bigint extends Num
-  ? never
-  : Num;
+    ? never
+    : Num;

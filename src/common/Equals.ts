@@ -11,11 +11,12 @@
 
 import { Compute } from './Compute';
 
-type StrictEquals<A, B> = (<T>(a: T) => T extends A ? true : false) extends <T>(
-  b: T,
-) => T extends B ? true : false
-  ? true
-  : false;
+type StrictEquals<A, B> =
+  (<T>(a: T) => T extends A ? true : false) extends <T>(
+    b: T,
+  ) => T extends B ? true : false
+    ? true
+    : false;
 
 export type Equals<A, B> = StrictEquals<Compute<A>, Compute<B>>;
 

@@ -21,25 +21,27 @@ type IsAllLiteral<
   Str extends string,
   SearchValue extends TemplatePart,
   ReplaceValue extends TemplatePart,
-> = IsLiteral<Str> extends false
-  ? false
-  : IsLiteralTemplatePart<SearchValue | ReplaceValue> extends false
-  ? false
-  : true;
+> =
+  IsLiteral<Str> extends false
+    ? false
+    : IsLiteralTemplatePart<SearchValue | ReplaceValue> extends false
+      ? false
+      : true;
 
 export type Replace<
   Str extends string,
   SearchValue extends TemplatePart,
   ReplaceValue extends TemplatePart,
-> = IsAllLiteral<Str, SearchValue, ReplaceValue> extends false
-  ? string
-  : SearchValue extends ''
-  ? RemoveFixes<
-      JoinImpl<SplitOneImpl<AddFixes<Str>, SearchValue>, ReplaceValue>
-    >
-  : Str extends `${infer Left}${SearchValue}${infer Right}`
-  ? `${Left}${ReplaceValue}${Right}`
-  : Str;
+> =
+  IsAllLiteral<Str, SearchValue, ReplaceValue> extends false
+    ? string
+    : SearchValue extends ''
+      ? RemoveFixes<
+          JoinImpl<SplitOneImpl<AddFixes<Str>, SearchValue>, ReplaceValue>
+        >
+      : Str extends `${infer Left}${SearchValue}${infer Right}`
+        ? `${Left}${ReplaceValue}${Right}`
+        : Str;
 
 export const replace = <
   Str extends string,
@@ -74,11 +76,14 @@ export type ReplaceAll<
   Str extends string,
   SearchValue extends TemplatePart,
   ReplaceValue extends TemplatePart,
-> = IsAllLiteral<Str, SearchValue, ReplaceValue> extends false
-  ? string
-  : SearchValue extends ''
-  ? RemoveFixes<JoinImpl<SplitImpl<AddFixes<Str>, SearchValue>, ReplaceValue>>
-  : ReplaceAllImpl<Str, SearchValue, ReplaceValue>;
+> =
+  IsAllLiteral<Str, SearchValue, ReplaceValue> extends false
+    ? string
+    : SearchValue extends ''
+      ? RemoveFixes<
+          JoinImpl<SplitImpl<AddFixes<Str>, SearchValue>, ReplaceValue>
+        >
+      : ReplaceAllImpl<Str, SearchValue, ReplaceValue>;
 
 export const replaceAll = <
   Str extends string,

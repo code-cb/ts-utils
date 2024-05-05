@@ -12,6 +12,5 @@ type CharUnionImpl<
   ? CharUnionImpl<Rest, AccUnion | First>
   : AccUnion;
 
-export type CharUnion<Str extends string> = IsLiteral<Str> extends false
-  ? string
-  : CharUnionImpl<Str>;
+export type CharUnion<Str extends string> =
+  IsLiteral<Str> extends false ? string : CharUnionImpl<Str>;

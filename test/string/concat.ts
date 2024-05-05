@@ -22,7 +22,7 @@ describe(`S.Concat and S.concat`, () => {
 
     assert<Equals<S.Concat<S.TemplatePart[]>, string>>();
     const c4 = S.concat(...['a', 1, false, true]);
-    assert<Equals<typeof c4, string>>();
+    assert<Equals<typeof c4, `${string}${number}${boolean}${boolean}`>>();
     expect(c4).toBe('a1falsetrue');
   });
 });

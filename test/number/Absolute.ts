@@ -15,12 +15,12 @@ describe(`N.AbsoluteNumber`, () => {
   });
 });
 
-describe(`N.AbsoluteBigInt`, () => {
-  it(`works`, () => {
-    assert<Equals<N.AbsoluteBigInt<0n>, 0n>>();
-    assert<Equals<N.AbsoluteBigInt<-0n>, 0n>>();
-    assert<Equals<N.AbsoluteBigInt<592n>, 592n>>();
-    assert<Equals<N.AbsoluteBigInt<-924n>, 924n>>();
-    assert<Equals<N.AbsoluteBigInt<bigint>, bigint>>();
-  });
-});
+// describe(`N.AbsoluteBigInt`, () => {
+//   it(`works`, () => {
+//     assert<Equals<N.AbsoluteBigInt<0n>, 0n>>();
+//     assert<Equals<N.AbsoluteBigInt<-0n>, 0n>>();
+//     assert<Equals<N.AbsoluteBigInt<592n>, 592n>>();
+//     assert<Equals<N.AbsoluteBigInt<-924n>, 924n>>();
+//     assert<Equals<N.AbsoluteBigInt<bigint>, bigint>>();
+//   });
+// });

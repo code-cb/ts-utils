@@ -4,9 +4,9 @@ export type IsLiteralTemplatePart<Value extends TemplatePart> =
   string extends Value
     ? false
     : number extends Value
-    ? false
-    : bigint extends Value
-    ? false
-    : boolean extends Value
-    ? false
-    : true;
+      ? false
+      : bigint extends Value
+        ? false
+        : boolean extends Value
+          ? false
+          : true;

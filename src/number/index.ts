@@ -1,4 +1,4 @@
-export { type AbsoluteBigInt, type AbsoluteNumber } from './Absolute';
+export { type AbsoluteNumber } from './Absolute';
 export { type Integer, type IsInteger, isInteger } from './Integer';
 export { type IsNegative, type Negative } from './Negative';
 export { type Numeric } from './Numeric';

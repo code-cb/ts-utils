@@ -7,7 +7,7 @@
 export type Assignable<A, B> = [A] extends [never]
   ? false
   : [A] extends [B]
-  ? true
-  : false;
+    ? true
+    : false;
 
 export const assignable = <Value>(_value: Value) => {};

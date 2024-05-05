@@ -3,8 +3,8 @@ import { IsLiteral } from './Literal';
 type SnakeConcat<Head extends string, Char extends string> = Head extends ''
   ? Lowercase<Char>
   : Char extends Uppercase<Char>
-  ? `${Head}-${Lowercase<Char>}`
-  : `${Head}${Char}`;
+    ? `${Head}-${Lowercase<Char>}`
+    : `${Head}${Char}`;
 
 type CamelToSnakeImpl<
   Str extends string,
@@ -13,9 +13,8 @@ type CamelToSnakeImpl<
   ? CamelToSnakeImpl<Tail, SnakeConcat<Result, First>>
   : Result;
 
-export type CamelToSnake<Str extends string> = IsLiteral<Str> extends false
-  ? string
-  : CamelToSnakeImpl<Str>;
+export type CamelToSnake<Str extends string> =
+  IsLiteral<Str> extends false ? string : CamelToSnakeImpl<Str>;
 
 export const camelToSnake = <Str extends string>(str: Str) =>
   str

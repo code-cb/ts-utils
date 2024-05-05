@@ -14,8 +14,8 @@ type Merge<
       [Key in keyof Target | keyof Source]: Key extends keyof Source
         ? Source[Key]
         : Key extends keyof Target
-        ? Target[Key]
-        : never;
+          ? Target[Key]
+          : never;
     }
   : never;
 

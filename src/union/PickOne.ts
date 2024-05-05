@@ -5,8 +5,5 @@
 
 import { MonoFn, ToIntersection } from './ToIntersection';
 
-export type PickOne<Union> = ToIntersection<MonoFn<Union>> extends (
-  v: infer Value,
-) => any
-  ? Value
-  : never;
+export type PickOne<Union> =
+  ToIntersection<MonoFn<Union>> extends (v: infer Value) => any ? Value : never;

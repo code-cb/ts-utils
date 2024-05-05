@@ -10,11 +10,12 @@ describe(`B.Not`, () => {
   });
 
   test(`alternative to B.Not - 1`, () => {
-    type Not<Value extends boolean> = Equals<Value, true> extends true
-      ? false
-      : Equals<Value, false> extends true
-      ? true
-      : never;
+    type Not<Value extends boolean> =
+      Equals<Value, true> extends true
+        ? false
+        : Equals<Value, false> extends true
+          ? true
+          : never;
     assert<Equals<Not<true>, false>>();
     assert<Equals<Not<false>, true>>();
     assert<Equals<Not<boolean>, never>>(); // OK?

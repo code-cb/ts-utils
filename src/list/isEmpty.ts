@@ -9,11 +9,12 @@ export type IsEmpty<
   List extends ReadonlyArray<any>,
   WhenTrue = true,
   WhenFalse = false,
-> = IsLiteral<List> extends false
-  ? WhenTrue | WhenFalse
-  : List['length'] extends 0
-  ? WhenTrue
-  : WhenFalse;
+> =
+  IsLiteral<List> extends false
+    ? WhenTrue | WhenFalse
+    : List['length'] extends 0
+      ? WhenTrue
+      : WhenFalse;
 
 export function isEmpty(list: Array<any>): list is [];
 export function isEmpty(list: ReadonlyArray<any>): list is readonly [];

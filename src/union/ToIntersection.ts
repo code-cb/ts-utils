@@ -7,8 +7,7 @@
 
 export type MonoFn<Union> = Union extends any ? (arg: Union) => any : never;
 
-export type ToIntersection<Union> = MonoFn<Union> extends (
-  arg: infer Intersection,
-) => void
-  ? Intersection
-  : never;
+export type ToIntersection<Union> =
+  MonoFn<Union> extends (arg: infer Intersection) => void
+    ? Intersection
+    : never;

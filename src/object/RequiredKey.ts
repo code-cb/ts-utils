@@ -16,6 +16,5 @@ export type RequiredKey<Obj extends object> = Exclude<
   Value<MarkRequiredKeyAsNever<Obj>>
 >;
 
-export type HasRequiredKey<Obj extends object> = RequiredKey<Obj> extends never
-  ? false
-  : true;
+export type HasRequiredKey<Obj extends object> =
+  RequiredKey<Obj> extends never ? false : true;

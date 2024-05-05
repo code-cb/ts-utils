@@ -21,8 +21,8 @@ describe(`Assignable`, () => {
     type Assignable<A, B> = (() => A) extends () => never
       ? false
       : (() => A) extends () => B
-      ? true
-      : false;
+        ? true
+        : false;
     assert<Assignable<'a', 'a' | 'b'>>();
     assert<B.Not<Assignable<'a' | 'b', 'a'>>>();
     assert<Assignable<{ a: 4; b: 5 }, { b: 5 }>>();
@@ -40,8 +40,8 @@ describe(`Assignable`, () => {
     type Assignable<A, B> = [A] extends [never]
       ? false
       : A extends B
-      ? true
-      : false;
+        ? true
+        : false;
     assert<Assignable<'a', 'a' | 'b'>>();
     assert<Equals<Assignable<'a' | 'b', 'a'>, boolean>>(); // Hmmm...
     assert<Assignable<{ a: 4; b: 5 }, { b: 5 }>>();

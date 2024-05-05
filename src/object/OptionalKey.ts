@@ -19,6 +19,5 @@ export type OptionalKey<Obj extends object> = Exclude<
   undefined
 >;
 
-export type HasOptionalKey<Obj extends object> = OptionalKey<Obj> extends never
-  ? false
-  : true;
+export type HasOptionalKey<Obj extends object> =
+  OptionalKey<Obj> extends never ? false : true;
