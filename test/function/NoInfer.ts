@@ -42,15 +42,16 @@ describe(`F.NoInfer`, () => {
     const w2 = g2('a', 'b');
     assert<Equals<typeof w2, 'b'>>();
 
-    // When returned type is not declared the type is less narrowed
+    // When returned type is not declared F.NoInfer and NoInfer behave differently
+    // In the case of F.NoInfer the inferred type is less narrowed
     const f3 = <T>(a: F.NoInfer<T>, b: T) => (F.noop(b), a);
     const v3 = f3('b', 'b');
     assert<Equals<typeof v3, string>>();
 
-    // When returned type is not declared the type is less narrowed
+    // In the case of NoInfer the inferred type is still narrowed
     const g3 = <T>(a: NoInfer<T>, b: T) => (F.noop(b), a);
     const w3 = g3('b', 'b');
-    assert<Equals<typeof w3, string>>();
+    assert<Equals<typeof w3, 'b'>>();
 
     const f4 = <T = never>(a: F.NoInfer<T>, b: F.NoInfer<T>): T => (
       F.noop(b), a
