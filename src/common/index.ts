@@ -24,6 +24,7 @@ export {
 export { type Equals, type IsEqual } from './Equals';
 export { exclude } from './exclude';
 export { type ExcludeStrict } from './ExcludeStrict';
+export { type ExcludeSuper } from './ExcludeSuper';
 export { type ExtractStrict } from './ExtractStrict';
 export { id, id as subtypeOf, type Id, type Id as Subtype } from './id';
 export { type If } from './If';
