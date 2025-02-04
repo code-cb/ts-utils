@@ -21,6 +21,7 @@ export {
   type Compute as Resolve,
   type Compute as Unite,
 } from './Compute';
+export { delay } from './delay';
 export { type Equals, type IsEqual } from './Equals';
 export { exclude } from './exclude';
 export { type ExcludeStrict } from './ExcludeStrict';
