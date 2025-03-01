@@ -46,6 +46,7 @@ export {
 export { asNullable, type Nullable } from './Nullable';
 export { asOptional, type Optional } from './Optional';
 export { type Primitive } from './Primitive';
+export { type Satisfies } from './Satisfies';
 export { symToStr as nameOf, symToStr } from './symToStr';
 export { type TryCast } from './TryCast';
 export {

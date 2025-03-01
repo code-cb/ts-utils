@@ -26,13 +26,13 @@ type AllOrAny<
   One<Element<Conditions>, WhenAny, WhenAll>
 >;
 
-export type All<Conditions extends ReadonlyArray<boolean>> = AllOrAny<
+export type All<Conditions extends readonly boolean[]> = AllOrAny<
   Conditions,
   false,
   true
 >;
 
-export type Any<Conditions extends ReadonlyArray<boolean>> = AllOrAny<
+export type Any<Conditions extends readonly boolean[]> = AllOrAny<
   Conditions,
   true,
   false

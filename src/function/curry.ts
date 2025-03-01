@@ -3,7 +3,7 @@ import { IsLiteral } from '../list';
 import { SkipImpl } from '../list/Skip';
 import { SubListImpl } from '../list/SubList';
 
-type CurryImpl<Args extends ReadonlyArray<any>, Return> = <
+type CurryImpl<Args extends readonly any[], Return> = <
   SubArgs extends SubListImpl<Args>,
 >(
   ...args: SubArgs
@@ -11,7 +11,7 @@ type CurryImpl<Args extends ReadonlyArray<any>, Return> = <
   ? Return
   : CurryImpl<SkipImpl<Args, SubArgs['length']>, Return>;
 
-export type Curry<Args extends ReadonlyArray<any>, Return> = If<
+export type Curry<Args extends readonly any[], Return> = If<
   IsLiteral<Args>,
   CurryImpl<Args, Return>,
   (...args: Args[number][]) => Return | Curry<Args[number][], Return>
@@ -27,6 +27,6 @@ const curryImpl =
     );
   };
 
-export const curry = <Args extends ReadonlyArray<any>, Return>(
+export const curry = <Args extends readonly any[], Return>(
   f: (...args: Args) => Return,
 ): Curry<Args, Return> => curryImpl(f, f.length);

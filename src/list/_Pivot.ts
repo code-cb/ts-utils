@@ -1,7 +1,7 @@
 type PivotBackwardRaw<
   Index extends number,
-  Left extends ReadonlyArray<any>,
-  Right extends ReadonlyArray<any>,
+  Left extends readonly any[],
+  Right extends readonly any[],
 > = Right['length'] extends Index
   ? [Left, Right]
   : Left extends readonly [...infer Head, infer Last]
@@ -9,14 +9,14 @@ type PivotBackwardRaw<
     : [Left, Right];
 
 export type PivotBackwardImpl<
-  Arr extends ReadonlyArray<any>,
+  Arr extends readonly any[],
   Index extends number,
 > = PivotBackwardRaw<Index, Arr, []>;
 
 type PivotForwardRaw<
   Index extends number,
-  Left extends ReadonlyArray<any>,
-  Right extends ReadonlyArray<any>,
+  Left extends readonly any[],
+  Right extends readonly any[],
 > = Left['length'] extends Index
   ? [Left, Right]
   : Right extends readonly [infer First, ...infer Tail]
@@ -24,6 +24,6 @@ type PivotForwardRaw<
     : [Left, Right];
 
 export type PivotForwardImpl<
-  List extends ReadonlyArray<any>,
+  List extends readonly any[],
   Index extends number,
 > = PivotForwardRaw<Index, [], List>;

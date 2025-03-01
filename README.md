@@ -12,6 +12,7 @@ This can be seen as a mix of
 - [ts-essentials](https://github.com/ts-essentials/ts-essentials)
 - [ts-extras](https://github.com/sindresorhus/ts-extras)
 - [Conditional Type Checks](https://github.com/dsherret/conditional-type-checks)
+- [SimplyTyped](https://github.com/andnp/SimplyTyped)
 
 It also add many more cool helper types and functions.
 

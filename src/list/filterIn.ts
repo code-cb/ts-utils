@@ -3,9 +3,9 @@ import { ElementOrSingle, ReadonlyArrayOrSingle } from './ArrayOrSingle';
 import { IsLiteral } from './Literal';
 
 type FilterInImpl<
-  List extends ReadonlyArray<any>,
+  List extends readonly any[],
   Included,
-  Result extends ReadonlyArray<any> = [],
+  Result extends readonly any[] = [],
 > = List extends readonly [infer First, ...infer Tail]
   ? If<
       Extends<First, Included>,
@@ -14,14 +14,14 @@ type FilterInImpl<
     >
   : Result;
 
-export type FilterIn<List extends ReadonlyArray<any>, Included> = If<
+export type FilterIn<List extends readonly any[], Included> = If<
   IsLiteral<List>,
   FilterInImpl<List, Included>,
   List[number][]
 >;
 
 export const filterIn = <
-  List extends ReadonlyArray<any>,
+  List extends readonly any[],
   Included extends ReadonlyArrayOrSingle<any>,
 >(
   list: List,

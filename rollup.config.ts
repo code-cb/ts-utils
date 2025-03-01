@@ -1,7 +1,7 @@
+import terser from '@rollup/plugin-terser';
 import FastGlob from 'fast-glob';
 import { basename, dirname } from 'node:path';
 import { defineConfig, ModuleFormat } from 'rollup';
-import { terser } from 'rollup-plugin-terser';
 import ts from 'rollup-plugin-typescript2';
 
 const isDev =

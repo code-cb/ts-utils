@@ -11,7 +11,7 @@ describe(`L.IsEmpty and L.isEmpty`, () => {
 
     assert<Equals<L.IsEmpty<object[]>, boolean>>();
 
-    (arr: ReadonlyArray<number>) => {
+    (arr: readonly number[]) => {
       if (L.isEmpty(arr)) {
         assert<Equals<typeof arr, readonly []>>();
         assert<Equals<typeof arr.length, 0>>();
@@ -20,7 +20,7 @@ describe(`L.IsEmpty and L.isEmpty`, () => {
       }
     };
 
-    (arr: Array<number>) => {
+    (arr: number[]) => {
       if (L.isEmpty(arr)) {
         assert<Equals<typeof arr, []>>();
         assert<Equals<typeof arr.length, 0>>();

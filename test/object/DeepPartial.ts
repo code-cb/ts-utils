@@ -73,7 +73,6 @@ describe(`O.DeepPartial`, () => {
       Equals<O.DeepPartial<readonly number[]>, readonly (number | undefined)[]>
     >;
     assert<Equals<O.DeepPartial<number[]>, (number | undefined)[]>>;
-    assert<Equals<O.DeepPartial<Array<number>>, Array<number | undefined>>>;
 
     assert<
       Equals<

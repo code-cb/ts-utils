@@ -21,17 +21,17 @@ type Merge<
 
 export type Assign<
   Target extends AnyRecord,
-  Sources extends ReadonlyArray<AnyRecord>,
+  Sources extends readonly AnyRecord[],
 > = Sources extends readonly [
   infer First extends AnyRecord,
-  ...infer Tail extends ReadonlyArray<AnyRecord>,
+  ...infer Tail extends readonly AnyRecord[],
 ]
   ? Assign<Merge<Target, First>, Tail>
   : Target;
 
 export const assign = <
   Target extends AnyRecord,
-  Sources extends ReadonlyArray<AnyRecord>,
+  Sources extends readonly AnyRecord[],
 >(
   target: Target,
   ...sources: Sources

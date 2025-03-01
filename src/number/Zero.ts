@@ -1,3 +1,8 @@
+/**
+ * References:
+ * - https://github.com/andnp/SimplyTyped/blob/master/src/types/numbers.ts#L6
+ */
+
 import { If } from '../common';
 import { IsLiteral } from './Literal';
 import { Numeric } from './Numeric';

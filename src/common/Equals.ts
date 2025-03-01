@@ -7,6 +7,7 @@
  * - https://github.com/Microsoft/TypeScript/issues/27024#issuecomment-421529650
  * - https://github.com/aleclarson/spec.ts/blob/a5f7926fa532fd6b742bccdb0d1c8025fbc1a20b/index.d.ts#L9
  * - https://github.com/dsherret/conditional-type-checks/blob/b1fbcd26068c613b5bc37dac89f2c7e7f28d8c4b/mod.ts#L44
+ * - https://github.com/rauschma/asserttt/blob/main/src/asserttt.ts#L20
  */
 
 import { Compute } from './Compute';

@@ -3,23 +3,23 @@ import { ElementOrSingle, ReadonlyArrayOrSingle } from './ArrayOrSingle';
 import { IsLiteral } from './Literal';
 
 type FilterOutImpl<
-  List extends ReadonlyArray<any>,
+  List extends readonly any[],
   Excluded,
-  Result extends ReadonlyArray<any> = [],
+  Result extends readonly any[] = [],
 > = List extends readonly [infer First, ...infer Tail]
   ? [First] extends [Excluded]
     ? FilterOutImpl<Tail, Excluded, Result>
     : FilterOutImpl<Tail, Excluded, [...Result, First]>
   : Result;
 
-export type FilterOut<List extends ReadonlyArray<any>, Excluded> = If<
+export type FilterOut<List extends readonly any[], Excluded> = If<
   IsLiteral<List>,
   FilterOutImpl<List, Excluded>,
   List[number][]
 >;
 
 export const filterOut = <
-  List extends ReadonlyArray<any>,
+  List extends readonly any[],
   Excluded extends ReadonlyArrayOrSingle<any>,
 >(
   list: List,

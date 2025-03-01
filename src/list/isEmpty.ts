@@ -6,7 +6,7 @@
 import { IsLiteral } from './Literal';
 
 export type IsEmpty<
-  List extends ReadonlyArray<any>,
+  List extends readonly any[],
   WhenTrue = true,
   WhenFalse = false,
 > =
@@ -16,8 +16,8 @@ export type IsEmpty<
       ? WhenTrue
       : WhenFalse;
 
-export function isEmpty(list: Array<any>): list is [];
-export function isEmpty(list: ReadonlyArray<any>): list is readonly [];
-export function isEmpty(list: ReadonlyArray<any>) {
+export function isEmpty(list: any[]): list is [];
+export function isEmpty(list: readonly any[]): list is readonly [];
+export function isEmpty(list: readonly any[]) {
   return list.length === 0;
 }

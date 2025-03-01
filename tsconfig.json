@@ -2,7 +2,7 @@
   "extends": "@codecb/tsconfigs/tsconfig.esm-lib",
   "compilerOptions": {
     "baseUrl": "./src",
-    "noEmit": true
+    "erasableSyntaxOnly": false
   },
   "include": ["./src", "test"]
 }

@@ -9,33 +9,33 @@ import { IsLiteral } from '../list';
 import { TemplatePart } from './TemplatePart';
 
 type JoinRaw<
-  StrList extends ReadonlyArray<TemplatePart>,
+  StrList extends readonly TemplatePart[],
   Separator extends TemplatePart,
   Result extends string,
 > = StrList extends readonly [
   infer First extends TemplatePart,
-  ...infer Rest extends ReadonlyArray<TemplatePart>,
+  ...infer Rest extends readonly TemplatePart[],
 ]
   ? JoinRaw<Rest, Separator, `${Result}${Separator}${First}`>
   : Result;
 
 export type JoinImpl<
-  StrList extends ReadonlyArray<TemplatePart>,
+  StrList extends readonly TemplatePart[],
   Separator extends TemplatePart,
 > = StrList extends readonly [
   infer First extends TemplatePart,
-  ...infer Rest extends ReadonlyArray<TemplatePart>,
+  ...infer Rest extends readonly TemplatePart[],
 ]
   ? JoinRaw<Rest, Separator, `${First}`>
   : '';
 
 export type Join<
-  StrList extends ReadonlyArray<TemplatePart>,
+  StrList extends readonly TemplatePart[],
   Separator extends TemplatePart,
 > = If<IsLiteral<StrList>, JoinImpl<StrList, Separator>, string>;
 
 export const join = <
-  StrList extends ReadonlyArray<TemplatePart>,
+  StrList extends readonly TemplatePart[],
   Separator extends TemplatePart,
 >(
   strList: StrList,

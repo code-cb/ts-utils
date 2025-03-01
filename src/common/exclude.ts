@@ -6,6 +6,6 @@
 import { Primitive } from './Primitive';
 
 export const exclude =
-  <Excluded extends Primitive>(...excluded: ReadonlyArray<Excluded>) =>
+  <Excluded extends Primitive>(...excluded: readonly Excluded[]) =>
   <Value>(value: Value): value is Exclude<Value, Excluded> =>
     !excluded.includes(value as any);

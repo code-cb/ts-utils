@@ -5,7 +5,7 @@
 
 export type JsonPrimitive = string | number | boolean | null;
 
-export type JsonArray = Array<JsonValue>;
+export type JsonArray = JsonValue[];
 
 export type JsonObject = {
   [key: string]: JsonValue;

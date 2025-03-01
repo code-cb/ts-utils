@@ -20,5 +20,5 @@ export type Objectify<Union extends readonly [PropertyKey, unknown]> =
   >;
 
 export const fromEntries = <Entry extends readonly [PropertyKey, unknown]>(
-  entries: ReadonlyArray<Entry>,
+  entries: readonly Entry[],
 ) => Object.fromEntries(entries) as Objectify<Entry>;

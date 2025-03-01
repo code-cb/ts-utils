@@ -1,5 +1,6 @@
 {
   "extends": "@codecb/tsconfigs/tsconfig.esm-lib",
-  "compilerOptions": { "outDir": "dist" },
-  "include": ["./src"]
+  "compilerOptions": {
+    "erasableSyntaxOnly": false
+  }
 }

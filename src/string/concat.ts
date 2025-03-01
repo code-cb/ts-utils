@@ -3,7 +3,7 @@ import { IsLiteral as IsArrayLiteral } from '../list';
 import { TemplatePart } from './TemplatePart';
 
 type ConcatImpl<
-  StrList extends ReadonlyArray<TemplatePart>,
+  StrList extends readonly TemplatePart[],
   Result extends string = '',
 > = StrList extends readonly [
   infer First extends TemplatePart,
@@ -12,13 +12,13 @@ type ConcatImpl<
   ? ConcatImpl<Tail, `${Result}${First}`>
   : Result;
 
-export type Concat<StrList extends ReadonlyArray<TemplatePart>> = If<
+export type Concat<StrList extends readonly TemplatePart[]> = If<
   IsArrayLiteral<StrList>,
   ConcatImpl<StrList, ''>,
   string
 >;
 
-export const concat = <StrList extends ReadonlyArray<TemplatePart>>(
+export const concat = <StrList extends readonly TemplatePart[]>(
   ...strList: StrList
 ) => {
   const [str, ...rest] = strList;

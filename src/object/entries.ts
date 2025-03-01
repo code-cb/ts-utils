@@ -12,11 +12,7 @@ export type Entry<Obj extends object> = Value<{
   [K in keyof Obj]-?: [K, Obj[K]];
 }>;
 
-export type Entries<Obj extends object> = If<
-  Equals<Obj, {}>,
-  [],
-  Array<Entry<Obj>>
->;
+export type Entries<Obj extends object> = If<Equals<Obj, {}>, [], Entry<Obj>[]>;
 
 export const entries = <Obj extends object>(obj: Obj) =>
   Object.entries(obj) as unknown as Entries<Obj>;

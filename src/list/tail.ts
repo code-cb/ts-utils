@@ -2,7 +2,7 @@ import { If } from '../common';
 import { IsLiteral } from './Literal';
 
 export type TailImpl<
-  List extends ReadonlyArray<any>,
+  List extends readonly any[],
   Type = any,
   NotFound = never,
 > = List extends readonly [any, ...infer Tail]
@@ -12,10 +12,10 @@ export type TailImpl<
   : NotFound;
 
 export type Tail<
-  List extends ReadonlyArray<any>,
+  List extends readonly any[],
   Type = any,
   NotFound = never,
 > = If<IsLiteral<List>, TailImpl<List, Type, NotFound>, List[number][]>;
 
-export const tail = <List extends ReadonlyArray<any>>(list: List) =>
+export const tail = <List extends readonly any[]>(list: List) =>
   list.slice(1) as Tail<List, any, []>;

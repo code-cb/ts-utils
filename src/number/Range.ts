@@ -14,7 +14,7 @@ import {
 type RangeForward<
   From extends Iteration,
   To extends Iteration,
-  List extends ReadonlyArray<number> = [],
+  List extends readonly number[] = [],
 > = From extends To
   ? List
   : RangeForward<Next<From>, To, [...List, Value<From>]>;
@@ -22,7 +22,7 @@ type RangeForward<
 type RangeBackward<
   From extends Iteration,
   To extends Iteration,
-  List extends ReadonlyArray<number> = [],
+  List extends readonly number[] = [],
 > = From extends To
   ? List
   : RangeBackward<Prev<From>, To, [...List, Value<From>]>;

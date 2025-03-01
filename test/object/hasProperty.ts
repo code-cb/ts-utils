@@ -97,7 +97,7 @@ describe(`O.hasOwnProperty and O.hasProperty`, () => {
     expect(O.hasOwnProperty(r2, 'statusCode')).toBe(true);
     expect(O.hasOwnProperty(r2, 'value')).toBe(false);
 
-    type List<T> = Array<T> | Map<T, any> | Set<T>;
+    type List<T> = T[] | Map<T, any> | Set<T>;
 
     const l1: List<number> = new Map([
       [1, '1'],

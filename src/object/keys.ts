@@ -7,4 +7,4 @@
 export type Key<Obj extends object> = `${Exclude<keyof Obj, symbol>}`;
 
 export const keys = <Obj extends object>(obj: Obj) =>
-  Object.keys(obj) as Array<Key<Obj>>;
+  Object.keys(obj) as Key<Obj>[];
