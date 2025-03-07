@@ -16,6 +16,7 @@ export { has } from './has';
 export { head, type Head } from './head';
 export { includes } from './includes';
 export { inSubset } from './inSubset';
+export { isArray } from './isArray';
 export { isEmpty, type IsEmpty } from './isEmpty';
 export { last, type Last } from './last';
 export {

@@ -2,6 +2,7 @@
   "extends": "@codecb/tsconfigs/tsconfig.esm-lib",
   "compilerOptions": {
     "baseUrl": "./src",
+    "exactOptionalPropertyTypes": true,
     "erasableSyntaxOnly": false
   },
   "include": ["./src", "test"]
